@@ -1,0 +1,50 @@
+/* Staff and About Page Specific Styles */
+.about-page {
+  padding-top: 120px;
+}
+
+.staff-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: var(--spacing-lg);
+  margin-top: var(--spacing-lg);
+}
+
+.staff-card {
+  text-align: center;
+  opacity: 0;
+  transform: translateY(50px);
+  background-color: var(--primary-white);
+  padding: var(--spacing-lg);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-speed) var(--transition-ease);
+}
+
+.staff-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.staff-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto var(--spacing-md);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.staff-name {
+  font-size: 1.25rem;
+  margin-bottom: var(--spacing-sm);
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.staff-position {
+  font-size: 0.9rem;
+  color: var(--primary-color);
+  margin-bottom: var(--spacing-sm);
+  font-weight: 500;
+}

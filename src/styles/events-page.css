@@ -1,0 +1,37 @@
+/* Events Page Specific Styles */
+.events-page {
+  padding-top: 120px;
+}
+
+.event-details {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-lg);
+  padding-bottom: var(--spacing-lg);
+  border-bottom: 1px solid var(--accent-color);
+}
+
+.event-details-image {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.event-details-content {
+  padding: var(--spacing-md);
+}
+
+.event-details-title {
+  font-size: 1.75rem;
+  margin-bottom: var(--spacing-sm);
+}
+
+.event-details-date {
+  font-size: 1rem;
+  color: var(--highlight-color);
+  margin-bottom: var(--spacing-md);
+}
+
+.event-details-description {
+  margin-bottom: var(--spacing-md);
+}

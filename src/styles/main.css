@@ -1,0 +1,25 @@
+/* Main Stylesheet - Imports all modular CSS files */
+
+/* Variables and Base Styles */
+@import './variables.css';
+@import './base.css';
+
+/* Components */
+@import './header.css';
+@import './buttons.css';
+@import './animations.css';
+
+/* Sections */
+@import './hero.css';
+@import './sections.css';
+@import './service-cards.css';
+@import './about-section.css';
+@import './events-section.css';
+@import './footer.css';
+
+/* Page Specific Styles */
+@import './staff.css';
+@import './events-page.css';
+
+/* Responsive Design */
+@import './responsive.css';
