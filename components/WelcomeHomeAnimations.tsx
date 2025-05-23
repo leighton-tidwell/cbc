@@ -203,7 +203,7 @@ export default function WelcomeHomeAnimations({
 
       // Icon hover animations
       const infoBlocks = gsap.utils.toArray('.info-block');
-      infoBlocks.forEach((block: any) => {
+      (infoBlocks as HTMLElement[]).forEach((block) => {
         const icon = block.querySelector('.block-icon');
 
         block.addEventListener('mouseenter', () => {
