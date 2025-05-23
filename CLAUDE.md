@@ -50,3 +50,7 @@ This is a Single Page Application (SPA) for Calvary Baptist Church built with va
 - Smaller logo on mobile (40px) with larger hero logo (150px)
 - Hamburger menu with slide-in navigation
 - All animations respect reduced motion preferences
+
+### Development Guidelines
+
+- All files should be under 200 lines
