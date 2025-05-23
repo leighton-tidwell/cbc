@@ -3,7 +3,7 @@ export default function WatermarkPattern() {
   const watermarkText = Array(40).fill('CALVARY BAPTIST CHURCH').join(' • ');
 
   return (
-    <div className="absolute inset-0 overflow-hidden pointer-events-none select-none opacity-[0.08]">
+    <div className="absolute inset-0 overflow-hidden pointer-events-none select-none opacity-[0.35]">
       {/* Single diagonal layer */}
       <div
         className="absolute inset-0 whitespace-nowrap text-gray-dark font-black text-4xl tracking-wider transform -rotate-12"
