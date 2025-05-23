@@ -116,9 +116,9 @@
 
   .header:not(.scrolled) {
     padding: var(--spacing-sm) 0;
-    background-color: rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    background-color: transparent;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
   }
 
   .hero {
