@@ -62,4 +62,23 @@
       transform: translateY(-5px) rotate(45deg);
     }
   }
+
+  /* Watermark animations */
+  @keyframes watermark-drift-1 {
+    0% {
+      transform: rotate(-12deg) translateX(0);
+    }
+    100% {
+      transform: rotate(-12deg) translateX(-200px);
+    }
+  }
+
+  @keyframes watermark-drift-2 {
+    0% {
+      transform: rotate(12deg) translateX(0);
+    }
+    100% {
+      transform: rotate(12deg) translateX(150px);
+    }
+  }
 }

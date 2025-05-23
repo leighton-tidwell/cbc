@@ -1,11 +1,16 @@
+import WatermarkPattern from './WatermarkPattern';
+
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-white py-12">
-      <div className="max-w-7xl mx-auto px-4">
+    <footer className="bg-black text-white py-12 relative overflow-hidden">
+      {/* Repeating Watermark Background */}
+      <WatermarkPattern />
+
+      <div className="max-w-7xl mx-auto px-4 relative z-10">
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           <div>
             <h3 className="text-xl font-bold mb-4">Calvary Baptist Church</h3>
-            <p className="text-gray-400">
+            <p className="text-gray-300">
               Just ordinary people serving an extraordinary God!
             </p>
           </div>
@@ -53,8 +58,8 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-gray-800 pt-8 text-center">
-          <p className="text-gray-400">
+        <div className="border-t border-gray-medium/30 pt-8 text-center">
+          <p className="text-gray-300">
             &copy; {new Date().getFullYear()} Calvary Baptist Church, Merkel TX.
             All Rights Reserved.
           </p>
