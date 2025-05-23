@@ -8,31 +8,35 @@ import { usePathname } from 'next/navigation';
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [screenSize, setScreenSize] = useState<'mobile' | 'tablet' | 'desktop'>(
-    'desktop'
-  );
+  const [screenSize, setScreenSize] = useState<'mobile' | 'tablet' | 'desktop'>('desktop');
+  const [isInitialized, setIsInitialized] = useState(false);
   const pathname = usePathname();
 
   useEffect(() => {
+    const getScreenSize = () => {
+      const width = window.innerWidth;
+      if (width < 480) return 'mobile';
+      if (width < 768) return 'tablet';
+      return 'desktop';
+    };
+
+    const getScrolled = () => window.scrollY > 50;
+
+    // Initialize with correct values
+    setScrolled(getScrolled());
+    setScreenSize(getScreenSize());
+    setIsInitialized(true);
+
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
+      setScrolled(getScrolled());
     };
 
     const handleResize = () => {
-      const width = window.innerWidth;
-      if (width < 480) {
-        setScreenSize('mobile');
-      } else if (width < 768) {
-        setScreenSize('tablet');
-      } else {
-        setScreenSize('desktop');
-      }
+      setScreenSize(getScreenSize());
     };
 
     window.addEventListener('scroll', handleScroll);
     window.addEventListener('resize', handleResize);
-    handleScroll();
-    handleResize();
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
@@ -53,6 +57,11 @@ export default function Header() {
     if (screenSize === 'tablet') return scrolled ? 48 : 80;
     return scrolled ? 56 : 180;
   };
+
+  // Don't render until we know the correct initial state
+  if (!isInitialized) {
+    return null;
+  }
 
   return (
     <header
