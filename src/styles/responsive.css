@@ -56,7 +56,15 @@
   
   .service-times {
     grid-template-columns: 1fr;
-    gap: var(--spacing-md);
+    gap: var(--spacing-lg);
+  }
+  
+  .service-card {
+    height: 380px;
+  }
+  
+  .service-card:nth-child(2) {
+    margin-top: 0;
   }
   
   .event-details {
