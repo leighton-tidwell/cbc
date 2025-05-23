@@ -2,13 +2,13 @@ import { createHeader, updateActiveNavLink } from '../components/header.js';
 import { createFooter } from '../components/footer.js';
 import { createHeroSection } from '../components/hero.js';
 import { createServicesSection } from '../components/services.js';
-import { createAboutPreview } from '../components/about-preview.js';
+import { createWelcomeHome } from '../components/welcome-home.js';
 import { createEventsPreview } from '../components/events-preview.js';
 import {
   initHeaderScroll,
   animateHero,
   animateServiceCards,
-  animateAboutSection,
+  animateWelcomeHome,
   animateEventCards,
 } from '../utils/animations.js';
 
@@ -17,7 +17,7 @@ export const renderHomePage = () => {
     ${createHeader()}
     ${createHeroSection()}
     ${createServicesSection()}
-    ${createAboutPreview()}
+    ${createWelcomeHome()}
     ${createEventsPreview()}
     ${createFooter()}
   `;
@@ -32,6 +32,6 @@ export const renderHomePage = () => {
   initHeaderScroll();
   animateHero();
   animateServiceCards();
-  animateAboutSection();
+  animateWelcomeHome();
   animateEventCards();
 };
