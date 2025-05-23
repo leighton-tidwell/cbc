@@ -83,7 +83,7 @@ export default function WelcomeHome() {
             </div>
 
             {/* Scroll Indicator */}
-            <div className="scroll-indicator absolute bottom-8 md:bottom-16 left-1/2 transform -translate-x-1/2 opacity-0 z-20">
+            <div className="scroll-indicator hidden md:block absolute bottom-8 md:bottom-16 left-1/2 transform -translate-x-1/2 opacity-0 z-20">
               <span className="block text-sm text-gray-600 mb-2">
                 Scroll to explore
               </span>
@@ -97,7 +97,7 @@ export default function WelcomeHome() {
           <div className="info-container min-h-screen px-4 py-16 md:px-16 md:py-32 flex items-center">
             <div className="info-grid grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-32 max-w-[1400px] mx-auto w-full">
               {/* Info Content */}
-              <div className="info-content order-2 lg:order-1">
+              <div className="info-content order-1 lg:order-1">
                 <h2 className="info-title font-heading text-[clamp(2rem,8vw,3rem)] lg:text-[clamp(2.5rem,5vw,4rem)] leading-[1.1] mb-8 lg:mb-16 text-center lg:text-left">
                   <span className="title-accent block text-[0.75em] lg:text-[0.7em] text-gray-600 font-normal mb-1 lg:mb-0 opacity-0 -translate-x-[50px]">
                     A Place
@@ -223,7 +223,7 @@ export default function WelcomeHome() {
               </div>
 
               {/* Location Card */}
-              <div className="info-visual flex items-center justify-center order-1 lg:order-2 mt-8 lg:mt-0">
+              <div className="info-visual flex items-center justify-center order-2 lg:order-2 mt-8 lg:mt-0">
                 <div className="location-card bg-white rounded-lg overflow-hidden shadow-lg lg:shadow-xl opacity-0 translate-y-[30px] w-full">
                   <div className="location-header p-6 lg:p-16 bg-white text-center border-b border-gray-200">
                     <p className="header-subtitle text-xs lg:text-sm text-primary uppercase tracking-wider mb-2 font-medium">
