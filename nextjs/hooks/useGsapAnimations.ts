@@ -16,35 +16,42 @@ export function useHeaderAnimation() {
 
 export function useHeroAnimation() {
   useEffect(() => {
+    // Set initial states for all elements
+    gsap.set('.hero-content', { opacity: 0, y: 50 });
+    gsap.set('.hero-logo-mobile', { opacity: 0, scale: 0.8 });
+    gsap.set('.hero-title', { opacity: 0, y: 30 });
+    gsap.set('.hero-subtitle', { opacity: 0, y: 20 });
+    gsap.set('.hero-buttons > *', { opacity: 0, y: 20 });
+    
     const tl = gsap.timeline();
     
-    tl.from('.hero-content', {
-      opacity: 0,
-      y: 50,
+    tl.to('.hero-content', {
+      opacity: 1,
+      y: 0,
       duration: 1.2,
       ease: 'power3.out'
     })
-    .from('.hero-logo-mobile', {
-      scale: 0.8,
-      opacity: 0,
+    .to('.hero-logo-mobile', {
+      scale: 1,
+      opacity: 1,
       duration: 0.8,
       ease: 'back.out(1.7)'
     }, '-=0.8')
-    .from('.hero-title', {
-      opacity: 0,
-      y: 30,
+    .to('.hero-title', {
+      opacity: 1,
+      y: 0,
       duration: 1,
       ease: 'power3.out'
     }, '-=0.6')
-    .from('.hero-subtitle', {
-      opacity: 0,
-      y: 20,
+    .to('.hero-subtitle', {
+      opacity: 1,
+      y: 0,
       duration: 0.8,
       ease: 'power3.out'
     }, '-=0.6')
-    .from('.hero-buttons > *', {
-      opacity: 0,
-      y: 20,
+    .to('.hero-buttons > *', {
+      opacity: 1,
+      y: 0,
       duration: 0.6,
       stagger: 0.2,
       ease: 'power3.out'
