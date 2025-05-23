@@ -1,4 +1,6 @@
-import Image from 'next/image';
+import ServiceCard from './ServiceCard';
+import ServicesAnimationWrapper from './ServicesAnimationWrapper';
+import ServicesWatermark from './ServicesWatermark';
 
 export default function Services() {
   const services = [
@@ -8,7 +10,7 @@ export default function Services() {
       info: 'Worship Service',
       additional: 'Sunday School at 9:00 AM',
       image: '/images/stock/edwin-andrade-6liebVeAfrY-unsplash.jpg',
-      alt: 'Sunday Service'
+      alt: 'Sunday Service',
     },
     {
       day: 'Wednesday',
@@ -16,45 +18,28 @@ export default function Services() {
       info: 'Midweek Service',
       additional: 'Classes for all ages',
       image: '/images/stock/sam-balye-WNVnnHHcBeM-unsplash.jpg',
-      alt: 'Wednesday Service'
-    }
+      alt: 'Wednesday Service',
+    },
   ];
 
   return (
-    <section className="py-16 md:py-24 bg-bg-color" id="services">
-      <div className="max-w-7xl mx-auto px-4">
-        <h2 className="text-4xl md:text-5xl font-heading font-bold text-center mb-12">
+    <section className="section relative py-24 md:py-32 bg-white overflow-hidden" id="services">
+      {/* JESUS Watermark Background */}
+      <ServicesWatermark />
+      
+      <div className="container relative z-10 max-w-[1200px] mx-auto px-4">
+        <h2 className="section-title relative text-4xl md:text-5xl lg:text-6xl font-heading font-extrabold text-center mb-16 pb-8 tracking-[-0.02em] text-text-color
+          after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-[60px] after:h-1 after:bg-primary after:rounded-sm">
           Join Us This Week
         </h2>
-        
-        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-          {services.map((service) => (
-            <div 
-              key={service.day} 
-              className="group relative bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-default"
-            >
-              <div className="relative h-64 overflow-hidden">
-                <Image
-                  src={service.image}
-                  alt={service.alt}
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-700"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-              </div>
-              
-              <div className="relative -mt-8 mx-6 mb-6 bg-white rounded-lg p-6 text-center shadow-md">
-                <h3 className="text-2xl font-bold text-primary mb-2">{service.day}</h3>
-                <p className="text-3xl font-light text-gray-dark mb-3">{service.time}</p>
-                <p className="text-lg text-text-color">
-                  {service.info}
-                  <br />
-                  <small className="text-sm text-text-light">{service.additional}</small>
-                </p>
-              </div>
-            </div>
-          ))}
-        </div>
+
+        <ServicesAnimationWrapper>
+          <div className="service-times grid grid-cols-1 md:grid-cols-[repeat(auto-fit,minmax(350px,1fr))] gap-12 max-w-[900px] mx-auto mt-12">
+            {services.map((service, index) => (
+              <ServiceCard key={service.day} {...service} index={index} />
+            ))}
+          </div>
+        </ServicesAnimationWrapper>
       </div>
     </section>
   );
