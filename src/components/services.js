@@ -8,7 +8,7 @@ export const createServicesSection = () => {
         </p>-->
         <div class="service-times">
           <div class="service-card">
-            <img src="/src/assets/images/stock/edwin-andrade-6liebVeAfrY-unsplash.jpg" alt="Sunday Service" class="service-card-image">
+            <img src="/images/stock/edwin-andrade-6liebVeAfrY-unsplash.jpg" alt="Sunday Service" class="service-card-image">
             <div class="service-card-content">
               <h3 class="service-day">Sunday</h3>
               <p class="service-time">10:00 AM</p>
@@ -16,7 +16,7 @@ export const createServicesSection = () => {
             </div>
           </div>
           <div class="service-card">
-            <img src="/src/assets/images/stock/sam-balye-WNVnnHHcBeM-unsplash.jpg" alt="Wednesday Service" class="service-card-image">
+            <img src="/images/stock/sam-balye-WNVnnHHcBeM-unsplash.jpg" alt="Wednesday Service" class="service-card-image">
             <div class="service-card-content">
               <h3 class="service-day">Wednesday</h3>
               <p class="service-time">7:00 PM</p>

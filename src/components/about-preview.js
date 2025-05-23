@@ -4,7 +4,7 @@ export const createAboutPreview = () => {
       <div class="container">
         <div class="about-preview">
           <div>
-            <img src="/src/assets/images/stock/rosie-sun-rTwhmFSoXC8-unsplash.jpg" alt="Church Family" class="about-image">
+            <img src="/images/stock/rosie-sun-rTwhmFSoXC8-unsplash.jpg" alt="Church Family" class="about-image">
           </div>
           <div class="about-content">
             <h2 class="about-title">Welcome Home</h2>

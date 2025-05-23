@@ -6,7 +6,7 @@ export const createEventsPreview = () => {
         <div class="events-preview">
           <div class="event-cards">
             <div class="event-card">
-              <img src="/src/assets/images/stock/vince-fleming-gssVHlGhisQ-unsplash.jpg" alt="Sunday Service" class="event-image">
+              <img src="/images/stock/vince-fleming-gssVHlGhisQ-unsplash.jpg" alt="Sunday Service" class="event-image">
               <div class="event-content">
                 <h3 class="event-title">Sunday Morning Service</h3>
                 <p class="event-date">Sundays at 10:00 AM</p>
@@ -15,7 +15,7 @@ export const createEventsPreview = () => {
               </div>
             </div>
             <div class="event-card">
-              <img src="/src/assets/images/stock/megan-allen-fx81JSLfyLU-unsplash.jpg" alt="Wednesday Service" class="event-image">
+              <img src="/images/stock/megan-allen-fx81JSLfyLU-unsplash.jpg" alt="Wednesday Service" class="event-image">
               <div class="event-content">
                 <h3 class="event-title">Wednesday Night Service</h3>
                 <p class="event-date">Wednesdays at 7:00 PM</p>
@@ -24,7 +24,7 @@ export const createEventsPreview = () => {
               </div>
             </div>
             <div class="event-card">
-              <img src="/src/assets/images/stock/nathan-mullet-pmiW630yDPE-unsplash.jpg" alt="Sunday School" class="event-image">
+              <img src="/images/stock/nathan-mullet-pmiW630yDPE-unsplash.jpg" alt="Sunday School" class="event-image">
               <div class="event-content">
                 <h3 class="event-title">Sunday School</h3>
                 <p class="event-date">Sundays at 9:00 AM</p>

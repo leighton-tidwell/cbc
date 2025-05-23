@@ -1,7 +1,11 @@
-import { createHeader, updateActiveNavLink } from '../components/header.js';
-import { createFooter } from '../components/footer.js';
-import { createStaffSection } from '../components/staff-section.js';
-import { initHeaderScroll, animateAboutSection, animateStaffCards } from '../utils/animations.js';
+import { createHeader, updateActiveNavLink } from "../components/header.js";
+import { createFooter } from "../components/footer.js";
+import { createStaffSection } from "../components/staff-section.js";
+import {
+  initHeaderScroll,
+  animateAboutSection,
+  animateStaffCards,
+} from "../utils/animations.js";
 
 export const renderAboutPage = () => {
   const aboutContent = `
@@ -13,7 +17,7 @@ export const renderAboutPage = () => {
         <h1 class="section-title">Our Story</h1>
         <div class="about-preview">
           <div>
-            <img src="/src/assets/images/stock/nathan-mullet-S2N8hpN_vc0-unsplash.jpg" alt="Church Family" class="about-image">
+            <img src="/images/stock/nathan-mullet-S2N8hpN_vc0-unsplash.jpg" alt="Church Family" class="about-image">
           </div>
           <div class="about-content">
             <h2 class="about-title">Our Mission</h2>
@@ -29,11 +33,11 @@ export const renderAboutPage = () => {
   `;
 
   // Update document content
-  document.querySelector('#app').innerHTML = aboutContent;
-  
+  document.querySelector("#app").innerHTML = aboutContent;
+
   // Update active nav link
-  updateActiveNavLink('about');
-  
+  updateActiveNavLink("about");
+
   // Initialize animations
   initHeaderScroll();
   animateAboutSection();

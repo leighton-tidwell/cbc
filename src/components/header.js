@@ -3,7 +3,7 @@ export const createHeader = () => {
     <header class="header">
       <div class="container header-container">
         <a href="#" class="logo" data-page="home">
-          <img src="/src/assets/images/logo.png" alt="Calvary Baptist Church Logo">
+          <img src="/images/logo.png" alt="Calvary Baptist Church Logo">
         </a>
         <nav>
           <button class="mobile-menu-toggle" aria-label="Toggle menu">
@@ -24,10 +24,10 @@ export const createHeader = () => {
 };
 
 export const updateActiveNavLink = (page) => {
-  document.querySelectorAll('.nav-link').forEach(link => {
-    link.classList.remove('active');
+  document.querySelectorAll(".nav-link").forEach((link) => {
+    link.classList.remove("active");
     if (link.dataset.page === page) {
-      link.classList.add('active');
+      link.classList.add("active");
     }
   });
 };
