@@ -1,0 +1,176 @@
+/* Welcome Home Section - Slide 2: Church Information */
+.info-container {
+  min-height: 100vh;
+  padding: var(--spacing-2xl) var(--spacing-xl);
+  display: flex;
+  align-items: center;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-2xl);
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.info-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  line-height: 1.1;
+  margin-bottom: var(--spacing-xl);
+}
+
+.title-accent {
+  display: block;
+  font-size: 0.7em;
+  color: var(--text-light);
+  font-weight: 400;
+  opacity: 0;
+  transform: translateX(-50px);
+}
+
+.title-main {
+  display: block;
+  color: var(--text-color);
+  opacity: 0;
+  transform: translateX(-50px);
+}
+
+.info-blocks {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.info-block {
+  position: relative;
+  padding: var(--spacing-lg);
+  background: var(--primary-white);
+  border-radius: var(--radius-lg);
+  opacity: 0;
+  transform: translateY(30px);
+  overflow: hidden;
+  border: 1px solid var(--accent-color);
+  transition: all var(--transition-speed) var(--transition-ease);
+}
+
+.info-block:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  border-color: transparent;
+}
+
+.block-icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-md);
+  margin-bottom: var(--spacing-md);
+  transition: all var(--transition-speed) var(--transition-ease);
+}
+
+.info-block[data-theme='mission'] .block-icon {
+  background: rgba(115, 115, 115, 0.1);
+  color: var(--primary-color);
+}
+
+.info-block[data-theme='values'] .block-icon {
+  background: rgba(229, 115, 115, 0.1);
+  color: #e57373;
+}
+
+.info-block[data-theme='join'] .block-icon {
+  background: rgba(115, 185, 115, 0.1);
+  color: #73b973;
+}
+
+.info-block:hover .block-icon {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.info-block h3 {
+  font-size: 1.25rem;
+  margin-bottom: var(--spacing-sm);
+  color: var(--text-color);
+  font-weight: 600;
+}
+
+.info-block p {
+  color: var(--text-light);
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
+
+.block-accent {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100px;
+  height: 100px;
+  opacity: 0.05;
+  transform: translate(30px, -30px) rotate(45deg);
+}
+
+.info-block[data-theme='mission'] .block-accent {
+  background: var(--primary-color);
+}
+
+.info-block[data-theme='values'] .block-accent {
+  background: #e57373;
+}
+
+.info-block[data-theme='join'] .block-accent {
+  background: #73b973;
+}
+
+.info-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.location-card {
+  background: var(--primary-white);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  opacity: 0;
+  transform: translateY(30px);
+  width: 100%;
+}
+
+.location-header {
+  padding: var(--spacing-xl);
+  background: var(--primary-white);
+  text-align: center;
+  border-bottom: 1px solid var(--accent-color);
+}
+
+.header-subtitle {
+  font-size: 0.875rem;
+  color: var(--primary-color);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: var(--spacing-sm);
+  font-weight: 500;
+}
+
+.location-header h3 {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  margin-bottom: var(--spacing-md);
+  color: var(--text-color);
+  font-weight: 400;
+}
+
+.header-divider {
+  width: 60px;
+  height: 3px;
+  background: var(--primary-color);
+  margin: 0 auto;
+  border-radius: 2px;
+}
