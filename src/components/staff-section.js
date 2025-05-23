@@ -7,24 +7,36 @@ const staffData = {
     { name: 'Bo Martin', position: 'Youth Leader' },
     { name: 'Cutter Grisham', position: 'Youth Leader' },
     { name: 'Jovonna Duncan', position: "Children's Church Director" },
-    { name: 'Tara Martin', position: 'Administrative Assistant' }
+    { name: 'Tara Martin', position: 'Administrative Assistant' },
   ],
   elders: [
     { name: 'Robert Walker', position: 'Elder' },
     { name: 'Dwayne Freeman', position: 'Elder' },
     { name: 'Larry Hewitt', position: 'Elder' },
     { name: 'Clinton McKeehan', position: 'Elder' },
-    { name: 'Jimmy Don Rogers', position: 'Elder' }
-  ]
+    { name: 'Jimmy Don Rogers', position: 'Elder' },
+  ],
 };
 
 export const createStaffSection = () => {
   const leadershipCards = staffData.leadership
-    .map(person => createStaffCard(person.name, person.position, createStaffPlaceholder(person.name)))
+    .map((person) =>
+      createStaffCard(
+        person.name,
+        person.position,
+        createStaffPlaceholder(person.name)
+      )
+    )
     .join('');
-    
+
   const elderCards = staffData.elders
-    .map(person => createStaffCard(person.name, person.position, createStaffPlaceholder(person.name)))
+    .map((person) =>
+      createStaffCard(
+        person.name,
+        person.position,
+        createStaffPlaceholder(person.name)
+      )
+    )
     .join('');
 
   return `

@@ -24,10 +24,10 @@ export const createHeader = () => {
 };
 
 export const updateActiveNavLink = (page) => {
-  document.querySelectorAll(".nav-link").forEach((link) => {
-    link.classList.remove("active");
+  document.querySelectorAll('.nav-link').forEach((link) => {
+    link.classList.remove('active');
     if (link.dataset.page === page) {
-      link.classList.add("active");
+      link.classList.add('active');
     }
   });
 };

@@ -4,12 +4,12 @@ import { createHeroSection } from '../components/hero.js';
 import { createServicesSection } from '../components/services.js';
 import { createAboutPreview } from '../components/about-preview.js';
 import { createEventsPreview } from '../components/events-preview.js';
-import { 
-  initHeaderScroll, 
-  animateHero, 
-  animateServiceCards, 
-  animateAboutSection, 
-  animateEventCards 
+import {
+  initHeaderScroll,
+  animateHero,
+  animateServiceCards,
+  animateAboutSection,
+  animateEventCards,
 } from '../utils/animations.js';
 
 export const renderHomePage = () => {
@@ -24,10 +24,10 @@ export const renderHomePage = () => {
 
   // Update document content
   document.querySelector('#app').innerHTML = homeContent;
-  
+
   // Update active nav link
   updateActiveNavLink('home');
-  
+
   // Initialize animations
   initHeaderScroll();
   animateHero();

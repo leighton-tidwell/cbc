@@ -16,6 +16,7 @@ npm run preview    # Preview production build
 This is a Single Page Application (SPA) for Calvary Baptist Church built with vanilla JavaScript and custom CSS modules.
 
 ### Core Architecture Pattern
+
 - **Entry**: `index.html` → `src/main.js` → `src/app.js`
 - **Routing**: Custom client-side router in `src/utils/router.js` handles page navigation without full reloads
 - **Components**: HTML string templates in `src/components/` that are composed into pages

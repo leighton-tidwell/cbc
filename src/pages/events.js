@@ -36,19 +36,20 @@ export const renderEventsPage = () => {
 
   // Update document content
   document.querySelector('#app').innerHTML = eventsContent;
-  
+
   // Update active nav link
   updateActiveNavLink('events');
-  
+
   // Initialize animations
   initHeaderScroll();
-  
+
   // Event details animation
-  gsap.utils.toArray('.event-details').forEach(detail => {
-    gsap.fromTo(detail,
+  gsap.utils.toArray('.event-details').forEach((detail) => {
+    gsap.fromTo(
+      detail,
       {
         opacity: 0,
-        y: 60
+        y: 60,
       },
       {
         opacity: 1,
@@ -57,11 +58,11 @@ export const renderEventsPage = () => {
         ease: 'power3.out',
         scrollTrigger: {
           trigger: detail,
-          start: 'top 80%'
-        }
+          start: 'top 80%',
+        },
       }
     );
   });
-  
+
   animateEventCards();
 };

@@ -1,4 +1,10 @@
-export const createEventDetails = (title, date, description, image, additionalInfo = '') => {
+export const createEventDetails = (
+  title,
+  date,
+  description,
+  image,
+  additionalInfo = ''
+) => {
   return `
     <div class="event-details">
       <div>

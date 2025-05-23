@@ -85,11 +85,19 @@
 }
 
 @keyframes subtle-shift {
-  0% { transform: rotate(-15deg) translateX(0); }
-  100% { transform: rotate(-15deg) translateX(-100px); }
+  0% {
+    transform: rotate(-15deg) translateX(0);
+  }
+  100% {
+    transform: rotate(-15deg) translateX(-100px);
+  }
 }
 
 @keyframes subtle-shift-reverse {
-  0% { transform: rotate(25deg) translateX(0); }
-  100% { transform: rotate(25deg) translateX(50px); }
+  0% {
+    transform: rotate(25deg) translateX(0);
+  }
+  100% {
+    transform: rotate(25deg) translateX(50px);
+  }
 }

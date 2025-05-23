@@ -10,10 +10,10 @@ const initApp = () => {
   router.register('home', renderHomePage);
   router.register('about', renderAboutPage);
   router.register('events', renderEventsPage);
-  
+
   // Initialize router and get initial page
   const initialPage = router.init();
-  
+
   // Navigate to initial page
   router.navigate(initialPage);
 };

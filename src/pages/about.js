@@ -1,11 +1,11 @@
-import { createHeader, updateActiveNavLink } from "../components/header.js";
-import { createFooter } from "../components/footer.js";
-import { createStaffSection } from "../components/staff-section.js";
+import { createHeader, updateActiveNavLink } from '../components/header.js';
+import { createFooter } from '../components/footer.js';
+import { createStaffSection } from '../components/staff-section.js';
 import {
   initHeaderScroll,
   animateAboutSection,
   animateStaffCards,
-} from "../utils/animations.js";
+} from '../utils/animations.js';
 
 export const renderAboutPage = () => {
   const aboutContent = `
@@ -33,10 +33,10 @@ export const renderAboutPage = () => {
   `;
 
   // Update document content
-  document.querySelector("#app").innerHTML = aboutContent;
+  document.querySelector('#app').innerHTML = aboutContent;
 
   // Update active nav link
-  updateActiveNavLink("about");
+  updateActiveNavLink('about');
 
   // Initialize animations
   initHeaderScroll();
