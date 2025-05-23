@@ -8,7 +8,7 @@ import { usePathname } from 'next/navigation';
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
+  const [screenSize, setScreenSize] = useState<'mobile' | 'tablet' | 'desktop'>('desktop');
   const pathname = usePathname();
 
   useEffect(() => {
@@ -17,7 +17,14 @@ export default function Header() {
     };
 
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 480);
+      const width = window.innerWidth;
+      if (width < 480) {
+        setScreenSize('mobile');
+      } else if (width < 768) {
+        setScreenSize('tablet');
+      } else {
+        setScreenSize('desktop');
+      }
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -40,16 +47,19 @@ export default function Header() {
 
   // Determine logo size
   const getLogoSize = () => {
-    if (isMobile) return 40;
+    if (screenSize === 'mobile') return 40;
+    if (screenSize === 'tablet') return scrolled ? 48 : 80;
     return scrolled ? 56 : 180;
   };
 
   return (
     <header className={`fixed w-full top-0 z-[100] transition-all duration-[300ms] ease-[cubic-bezier(0.4,0,0.2,1)] ${
-      scrolled && !isMobile
+      scrolled && screenSize !== 'mobile'
         ? 'bg-white/[0.98] backdrop-blur-[20px] py-3 shadow-[0_2px_8px_rgba(0,0,0,0.08)]' 
-        : isMobile
+        : screenSize === 'mobile'
         ? 'bg-transparent py-2'
+        : screenSize === 'tablet'
+        ? 'bg-transparent py-4'
         : 'bg-transparent py-8'
     }`}>
       <div className="w-full max-w-[1200px] mx-auto px-4 flex justify-between items-center">
@@ -60,7 +70,7 @@ export default function Header() {
             width={getLogoSize()} 
             height={getLogoSize()}
             className={`transition-all duration-[300ms] ease-[cubic-bezier(0.4,0,0.2,1)] group-hover:scale-105 ${
-              !scrolled && !isMobile 
+              !scrolled && screenSize === 'desktop' 
                 ? 'drop-shadow-[0_2px_8px_rgba(0,0,0,0.4)] group-hover:drop-shadow-[0_4px_8px_rgba(0,0,0,0.15)]' 
                 : 'drop-shadow-[0_2px_4px_rgba(0,0,0,0.1)] group-hover:drop-shadow-[0_4px_8px_rgba(0,0,0,0.15)]'
             }`}
@@ -76,13 +86,13 @@ export default function Header() {
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             <span className={`block w-6 h-0.5 transition-all duration-[300ms] ease-[cubic-bezier(0.4,0,0.2,1)] ${
-              scrolled && !mobileMenuOpen && !isMobile ? 'bg-primary' : 'bg-white'
+              scrolled && !mobileMenuOpen && screenSize !== 'mobile' ? 'bg-primary' : 'bg-white'
             } ${mobileMenuOpen ? 'rotate-45 translate-y-[6px]' : ''}`}></span>
             <span className={`block w-6 h-0.5 transition-all duration-[300ms] ease-[cubic-bezier(0.4,0,0.2,1)] ${
-              scrolled && !mobileMenuOpen && !isMobile ? 'bg-primary' : 'bg-white'
+              scrolled && !mobileMenuOpen && screenSize !== 'mobile' ? 'bg-primary' : 'bg-white'
             } ${mobileMenuOpen ? 'opacity-0' : ''}`}></span>
             <span className={`block w-6 h-0.5 transition-all duration-[300ms] ease-[cubic-bezier(0.4,0,0.2,1)] ${
-              scrolled && !mobileMenuOpen && !isMobile ? 'bg-primary' : 'bg-white'
+              scrolled && !mobileMenuOpen && screenSize !== 'mobile' ? 'bg-primary' : 'bg-white'
             } ${mobileMenuOpen ? '-rotate-45 -translate-y-[6px]' : ''}`}></span>
           </button>
           
