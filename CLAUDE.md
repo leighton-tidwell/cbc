@@ -54,3 +54,4 @@ This is a Single Page Application (SPA) for Calvary Baptist Church built with va
 ### Development Guidelines
 
 - All files should be under 200 lines
+- Prioritize making server components, isolate client reactivity to the lowest level
