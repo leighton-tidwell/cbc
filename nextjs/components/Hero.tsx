@@ -62,7 +62,7 @@ export default function Hero() {
               onClick={scrollToServices} 
               className="btn inline-block px-[72px] py-[20px] bg-primary text-white font-semibold uppercase tracking-[0.1em] text-sm rounded cursor-pointer transition-all duration-[300ms] ease-[cubic-bezier(0.4,0,0.2,1)] relative overflow-hidden border-none font-primary
                 hover:bg-gray-dark hover:-translate-y-[2px] hover:shadow-[0_4px_16px_rgba(0,0,0,0.12)]
-                max-[768px]:w-full max-[768px]:max-w-[280px]"
+                max-[768px]:w-full max-[768px]:max-w-[280px] max-[768px]:px-8 max-[768px]:py-4"
             >
               Join Us This Sunday
             </a>
@@ -70,7 +70,7 @@ export default function Hero() {
               href="/about" 
               className="btn btn-outline inline-block px-[72px] py-[20px] bg-white/10 border-2 border-white text-white font-semibold uppercase tracking-[0.1em] text-sm rounded backdrop-blur-[10px] cursor-pointer transition-all duration-[300ms] ease-[cubic-bezier(0.4,0,0.2,1)] relative overflow-hidden font-primary shadow-[0_2px_8px_rgba(0,0,0,0.2)]
                 hover:bg-white hover:text-primary hover:border-white hover:-translate-y-[2px] hover:shadow-[0_4px_16px_rgba(0,0,0,0.12)]
-                max-[768px]:w-full max-[768px]:max-w-[280px]"
+                max-[768px]:w-full max-[768px]:max-w-[280px] max-[768px]:px-8 max-[768px]:py-4"
             >
               Learn More
             </Link>
