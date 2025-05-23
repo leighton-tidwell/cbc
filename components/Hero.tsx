@@ -29,22 +29,25 @@ export default function Hero() {
 
       {/* Content Container */}
       <div
-        className="container relative z-[2] w-full max-w-[1200px] mx-auto px-4 flex items-center h-full pt-[120px] 
-        md:px-8 lg:px-16 
+        className="container relative z-[2] w-full max-w-[1200px] mx-auto px-4 flex items-center h-full pt-[120px]
+        md:px-8 lg:px-16
         max-[768px]:px-8 max-[768px]:pb-16 max-[768px]:items-center"
       >
         <div
           className="hero-content max-w-[800px] w-full ml-0 px-8
           max-[768px]:text-center"
         >
-          <Image
-            src="/images/logo_2.png"
-            alt="Calvary Baptist Church"
-            width={150}
-            height={150}
-            className="hero-logo-mobile hidden max-[768px]:block mb-8 mx-auto drop-shadow-[0_4px_12px_rgba(0,0,0,0.5)]"
-            priority
-          />
+          <div className="hero-logo-mobile hidden max-[768px]:block mb-8 mx-auto w-[150px] h-[150px] relative">
+            <div className="absolute inset-0 bg-black/20 backdrop-blur-sm rounded-full shadow-2xl"></div>
+            <Image
+              src="/images/logo_2.png"
+              alt="Calvary Baptist Church"
+              width={150}
+              height={150}
+              className="relative z-10 drop-shadow-[0_4px_16px_rgba(0,0,0,0.6)]"
+              priority
+            />
+          </div>
           <h1
             className="hero-title font-heading font-black text-white leading-none mb-8 tracking-[-0.03em] drop-shadow-[0_4px_16px_rgba(0,0,0,0.4)]
             text-[clamp(3rem,9vw,5.5rem)]
