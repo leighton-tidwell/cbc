@@ -72,7 +72,7 @@ export default function EventsPreview() {
           </h2>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
-            {events.map((event, index) => (
+            {events.map((event) => (
               <div
                 key={event.id}
                 className="event-card group relative"
