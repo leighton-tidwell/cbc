@@ -135,7 +135,12 @@ export default function WelcomeHome() {
                       and helping people grow in their personal relationships
                       with Him.
                     </p>
-                    <div className="block-accent absolute top-0 right-0 w-[100px] h-[100px] opacity-[0.05] transform translate-x-[30px] -translate-y-[30px] rotate-45 bg-primary"></div>
+                    {/* Decorative element - Concentric circles */}
+                    <div className="absolute -top-6 -right-6 w-24 h-24 opacity-[0.08]">
+                      <div className="absolute inset-0 rounded-full border-2 border-primary"></div>
+                      <div className="absolute inset-3 rounded-full border-2 border-primary/60"></div>
+                      <div className="absolute inset-6 rounded-full bg-primary/30"></div>
+                    </div>
                   </div>
 
                   <div
@@ -164,7 +169,12 @@ export default function WelcomeHome() {
                       We believe in being a church that makes a difference. A
                       community that serves. A family that cares.
                     </p>
-                    <div className="block-accent absolute top-0 right-0 w-[100px] h-[100px] opacity-[0.05] transform translate-x-[30px] -translate-y-[30px] rotate-45 bg-red-400"></div>
+                    {/* Decorative element - Cross pattern */}
+                    <div className="absolute -top-4 -right-4 w-20 h-20 opacity-[0.06]">
+                      <div className="absolute top-1/2 left-0 right-0 h-2 bg-red-400 -translate-y-1/2"></div>
+                      <div className="absolute top-0 bottom-0 left-1/2 w-2 bg-red-400 -translate-x-1/2"></div>
+                      <div className="absolute top-1/2 left-1/2 w-4 h-4 bg-red-400/40 rounded-full -translate-x-1/2 -translate-y-1/2"></div>
+                    </div>
                   </div>
 
                   <div
@@ -217,7 +227,14 @@ export default function WelcomeHome() {
                       Everyone is welcome at Calvary Baptist Church. Come as you
                       are and experience the warmth of our church family.
                     </p>
-                    <div className="block-accent absolute top-0 right-0 w-[100px] h-[100px] opacity-[0.05] transform translate-x-[30px] -translate-y-[30px] rotate-45 bg-green-500"></div>
+                    {/* Decorative element - Overlapping hexagons */}
+                    <div className="absolute -top-5 -right-5 w-24 h-24 opacity-[0.07]">
+                      <svg viewBox="0 0 100 100" className="w-full h-full">
+                        <path d="M30 10 L50 10 L60 27 L50 44 L30 44 L20 27 Z" fill="none" stroke="rgb(34,197,94)" strokeWidth="2"/>
+                        <path d="M50 20 L70 20 L80 37 L70 54 L50 54 L40 37 Z" fill="rgb(34,197,94)" fillOpacity="0.3"/>
+                        <path d="M40 30 L60 30 L70 47 L60 64 L40 64 L30 47 Z" fill="none" stroke="rgb(34,197,94)" strokeWidth="1.5" strokeDasharray="2,2"/>
+                      </svg>
+                    </div>
                   </div>
                 </div>
               </div>
