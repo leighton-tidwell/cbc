@@ -40,17 +40,20 @@ export default function EventsPreview() {
         {/* Floating circles with animation classes */}
         <div className="events-bg-circle-1 absolute top-20 left-10 w-72 h-72 bg-primary/5 rounded-full blur-3xl" />
         <div className="events-bg-circle-2 absolute bottom-20 right-10 w-96 h-96 bg-primary/3 rounded-full blur-3xl" />
-        
+
         {/* Grid pattern */}
-        <div className="absolute inset-0 opacity-[0.03]" style={{
-          backgroundImage: `
+        <div
+          className="absolute inset-0 opacity-[0.03]"
+          style={{
+            backgroundImage: `
             linear-gradient(to right, #737373 1px, transparent 1px),
             linear-gradient(to bottom, #737373 1px, transparent 1px)
           `,
-          backgroundSize: '4rem 4rem',
-        }} />
+            backgroundSize: '4rem 4rem',
+          }}
+        />
       </div>
-      
+
       <div className="max-w-7xl mx-auto px-4 relative z-10">
         <EventsAnimationWrapper>
           {/* Decorative element */}
@@ -65,22 +68,22 @@ export default function EventsPreview() {
               <div className="w-12 h-[1px] bg-gradient-to-l from-transparent to-primary"></div>
             </div>
           </div>
-          
-          <h2 className="events-title relative text-4xl md:text-5xl lg:text-6xl font-heading font-extrabold text-center mb-6 pb-8 tracking-[-0.02em] text-text-color
-            after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-[60px] after:h-1 after:bg-primary after:rounded-sm">
+
+          <h2
+            className="events-title relative text-4xl md:text-5xl lg:text-6xl font-heading font-extrabold text-center mb-6 pb-8 tracking-[-0.02em] text-text-color
+            after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-[60px] after:h-1 after:bg-primary after:rounded-sm"
+          >
             Upcoming Events
           </h2>
-          
+
           <p className="events-subtitle text-xl text-text-light text-center max-w-3xl mx-auto mb-16">
-            Join us for worship, fellowship, and spiritual growth throughout the week
+            Join us for worship, fellowship, and spiritual growth throughout the
+            week
           </p>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
             {events.map((event) => (
-              <div
-                key={event.id}
-                className="event-card group relative"
-              >
+              <div key={event.id} className="event-card group relative">
                 {/* Card container with border */}
                 <div className="relative bg-white rounded-xl overflow-hidden border border-gray-100 hover:border-primary/20 transition-all duration-500 hover:shadow-xl">
                   {/* Image container with aspect ratio */}
@@ -91,7 +94,7 @@ export default function EventsPreview() {
                       fill
                       className="event-image object-cover transition-transform duration-700 group-hover:scale-105"
                     />
-                    
+
                     {/* Subtle gradient overlay for better text readability */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
                   </div>
@@ -100,46 +103,59 @@ export default function EventsPreview() {
                   <div className="p-6">
                     {/* Date/Time Badge - Always visible */}
                     <div className="date-badge inline-flex items-center gap-2 px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-semibold mb-4">
-                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      <svg
+                        className="w-4 h-4"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                        />
                       </svg>
                       {event.date}
                     </div>
-                    
+
                     <h3 className="text-xl font-heading font-bold mb-3 text-text-color line-clamp-2">
                       {event.title}
                     </h3>
                     <p className="text-text-light text-sm leading-relaxed mb-5 line-clamp-2">
                       {event.description}
                     </p>
-                    
+
                     {/* CTA with icon */}
                     <Link
                       href="/events"
                       className="inline-flex items-center gap-2 text-sm font-semibold text-primary group/link"
                     >
-                      <span className="relative">
-                        View Details
-                      </span>
+                      <span className="relative">View Details</span>
                       <div className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center group-hover/link:bg-primary/20 transition-colors duration-300">
-                        <svg 
-                          className="w-3 h-3 transition-transform duration-300 group-hover/link:translate-x-0.5" 
-                          fill="none" 
-                          stroke="currentColor" 
+                        <svg
+                          className="w-3 h-3 transition-transform duration-300 group-hover/link:translate-x-0.5"
+                          fill="none"
+                          stroke="currentColor"
                           viewBox="0 0 24 24"
                         >
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M9 5l7 7-7 7"
+                          />
                         </svg>
                       </div>
                     </Link>
                   </div>
-                  
+
                   {/* Accent line at bottom */}
                   <div className="accent-line absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-primary/0 via-primary to-primary/0" />
                 </div>
               </div>
             ))}
-        </div>
+          </div>
         </EventsAnimationWrapper>
       </div>
     </section>

@@ -15,7 +15,7 @@ export default function FooterWatermark() {
             CBC
           </div>
         </div>
-        
+
         {/* Desktop: Single large CBC */}
         <div
           className="hidden md:block absolute -top-1/2 -left-1/4 text-[20rem] font-heading font-bold text-white/50 transform -rotate-45 whitespace-nowrap"
@@ -57,7 +57,7 @@ export default function FooterWatermark() {
                 }}
               >
                 ORDINARY PEOPLE • EXTRAORDINARY GOD • CALVARY BAPTIST CHURCH •
-                MERKEL TX • FAITH • HOPE • LOVE • COMMUNITY • 
+                MERKEL TX • FAITH • HOPE • LOVE • COMMUNITY •
               </div>
             ))}
         </div>

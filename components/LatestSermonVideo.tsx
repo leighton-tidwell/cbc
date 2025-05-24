@@ -12,8 +12,6 @@ interface FacebookVideo {
 
 export default function LatestSermonVideo() {
   const [isLoaded, setIsLoaded] = useState(false);
-  const [latestVideo, setLatestVideo] = useState<FacebookVideo | null>(null);
-  const [error, setError] = useState<string | null>(null);
   const [dimensions, setDimensions] = useState({ width: 800, height: 450 });
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -82,7 +80,7 @@ export default function LatestSermonVideo() {
         // Use actual container dimensions, with some constraints
         setDimensions({
           width: Math.floor(width) || 800,
-          height: Math.floor(height) || 450
+          height: Math.floor(height) || 450,
         });
       }
     };
@@ -94,8 +92,11 @@ export default function LatestSermonVideo() {
   }, [isLoaded]);
 
   return (
-    <div ref={containerRef} className="relative w-full h-full flex items-center justify-center bg-gray-100 overflow-hidden">
-      {(!isLoaded || !latestVideo) && !error && (
+    <div
+      ref={containerRef}
+      className="relative w-full h-full flex items-center justify-center bg-gray-100 overflow-hidden"
+    >
+      {!isLoaded && (
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="animate-pulse">
             <div className="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center">
@@ -124,39 +125,8 @@ export default function LatestSermonVideo() {
         </div>
       )}
 
-      {error && (
-        <div className="text-center p-8">
-          <p className="text-text-light mb-4">{error}</p>
-          <a
-            href="https://www.facebook.com/cbcmerkel/videos"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-primary font-semibold hover:underline"
-          >
-            Watch on Facebook →
-          </a>
-        </div>
-      )}
-
-      {/* Facebook Video Plugin with specific video if available */}
-      {latestVideo && (
-        <div className="w-full h-full flex items-center justify-center">
-          <div
-            className="fb-video"
-            data-href={
-              latestVideo.permalink_url ||
-              `https://www.facebook.com/cbcmerkel/videos/${latestVideo.id}`
-            }
-            data-width={dimensions.width.toString()}
-            data-height={dimensions.height.toString()}
-            data-show-text="false"
-            data-lazy="true"
-          />
-        </div>
-      )}
-
       {/* Fallback to specific video for now */}
-      {!latestVideo && !error && isLoaded && (
+      {isLoaded && (
         <div className="w-full h-full flex items-center justify-center">
           <div
             className="fb-video"

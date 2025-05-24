@@ -10,7 +10,9 @@ interface EventsAnimationWrapperProps {
   children: React.ReactNode;
 }
 
-export default function EventsAnimationWrapper({ children }: EventsAnimationWrapperProps) {
+export default function EventsAnimationWrapper({
+  children,
+}: EventsAnimationWrapperProps) {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -93,10 +95,10 @@ export default function EventsAnimationWrapper({ children }: EventsAnimationWrap
 
       // Cards entrance with more dynamic effects
       const cards = gsap.utils.toArray('.event-card');
-      
+
       cards.forEach((card, index) => {
         const cardElement = card as HTMLElement;
-        
+
         // Initial state
         gsap.set(cardElement, {
           y: 80,
@@ -137,7 +139,6 @@ export default function EventsAnimationWrapper({ children }: EventsAnimationWrap
           });
         }
 
-
         // Hover animation setup
         cardElement.addEventListener('mouseenter', () => {
           gsap.to(cardElement, {
@@ -158,8 +159,11 @@ export default function EventsAnimationWrapper({ children }: EventsAnimationWrap
 
       // Bottom accent line animation on cards
       gsap.utils.toArray('.event-card .accent-line').forEach((line, index) => {
-        gsap.set(line as Element, { scaleX: 0, transformOrigin: 'left center' });
-        
+        gsap.set(line as Element, {
+          scaleX: 0,
+          transformOrigin: 'left center',
+        });
+
         ScrollTrigger.create({
           trigger: line as Element,
           start: 'top 80%',
@@ -174,7 +178,6 @@ export default function EventsAnimationWrapper({ children }: EventsAnimationWrap
           },
         });
       });
-
     }, containerRef);
 
     return () => ctx.revert();

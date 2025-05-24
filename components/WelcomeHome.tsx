@@ -230,9 +230,24 @@ export default function WelcomeHome() {
                     {/* Decorative element - Overlapping hexagons */}
                     <div className="absolute -top-5 -right-5 w-24 h-24 opacity-[0.07]">
                       <svg viewBox="0 0 100 100" className="w-full h-full">
-                        <path d="M30 10 L50 10 L60 27 L50 44 L30 44 L20 27 Z" fill="none" stroke="rgb(34,197,94)" strokeWidth="2"/>
-                        <path d="M50 20 L70 20 L80 37 L70 54 L50 54 L40 37 Z" fill="rgb(34,197,94)" fillOpacity="0.3"/>
-                        <path d="M40 30 L60 30 L70 47 L60 64 L40 64 L30 47 Z" fill="none" stroke="rgb(34,197,94)" strokeWidth="1.5" strokeDasharray="2,2"/>
+                        <path
+                          d="M30 10 L50 10 L60 27 L50 44 L30 44 L20 27 Z"
+                          fill="none"
+                          stroke="rgb(34,197,94)"
+                          strokeWidth="2"
+                        />
+                        <path
+                          d="M50 20 L70 20 L80 37 L70 54 L50 54 L40 37 Z"
+                          fill="rgb(34,197,94)"
+                          fillOpacity="0.3"
+                        />
+                        <path
+                          d="M40 30 L60 30 L70 47 L60 64 L40 64 L30 47 Z"
+                          fill="none"
+                          stroke="rgb(34,197,94)"
+                          strokeWidth="1.5"
+                          strokeDasharray="2,2"
+                        />
                       </svg>
                     </div>
                   </div>
@@ -241,7 +256,10 @@ export default function WelcomeHome() {
 
               {/* Location Card */}
               <div className="info-visual flex items-center justify-center order-2 lg:order-2 mt-8 lg:mt-0">
-                <div id="find-us" className="location-card bg-white rounded-lg overflow-hidden shadow-lg lg:shadow-xl opacity-0 translate-y-[30px] w-full">
+                <div
+                  id="find-us"
+                  className="location-card bg-white rounded-lg overflow-hidden shadow-lg lg:shadow-xl opacity-0 translate-y-[30px] w-full"
+                >
                   <div className="location-header p-6 lg:p-16 bg-white text-center border-b border-gray-200">
                     <p className="header-subtitle text-xs lg:text-sm text-primary uppercase tracking-wider mb-2 font-medium">
                       Come as you are

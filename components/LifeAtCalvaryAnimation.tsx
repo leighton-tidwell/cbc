@@ -10,7 +10,9 @@ interface LifeAtCalvaryAnimationProps {
   children: React.ReactNode;
 }
 
-export default function LifeAtCalvaryAnimation({ children }: LifeAtCalvaryAnimationProps) {
+export default function LifeAtCalvaryAnimation({
+  children,
+}: LifeAtCalvaryAnimationProps) {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -56,7 +58,7 @@ export default function LifeAtCalvaryAnimation({ children }: LifeAtCalvaryAnimat
 
       // Animate cards with refined stagger
       const cards = gsap.utils.toArray('.life-card');
-      
+
       cards.forEach((card, index) => {
         gsap.from(card as Element, {
           y: 40,

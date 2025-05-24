@@ -28,8 +28,8 @@ export default function LifeAtCalvary() {
             </h2>
 
             <p className="life-subtitle text-xl text-text-light max-w-3xl mx-auto leading-relaxed">
-              More than just Sunday services — we're a family united by faith,
-              growing together through every season of life.
+              More than just Sunday services — we&apos;re a family united by
+              faith, growing together through every season of life.
             </p>
           </div>
 
@@ -62,7 +62,7 @@ export default function LifeAtCalvary() {
                   <p className="text-lg text-text-light mb-6 leading-relaxed">
                     Join us the first Wednesday of every month for a time of
                     fellowship, food, and worship. Share a meal with your church
-                    family, followed by a powerful word from God's heart.
+                    family, followed by a powerful word from God&apos;s heart.
                   </p>
 
                   <div className="flex flex-wrap gap-4">
@@ -139,7 +139,7 @@ export default function LifeAtCalvary() {
               <div className="p-6">
                 <p className="text-text-light mb-4">
                   Engaging, age-appropriate lessons where children discover
-                  God's love through interactive teaching, worship, and
+                  God&apos;s love through interactive teaching, worship, and
                   activities.
                 </p>
                 <div className="flex items-center gap-2 text-sm font-semibold text-primary">
@@ -191,7 +191,7 @@ export default function LifeAtCalvary() {
               <div className="p-6">
                 <p className="text-text-light mb-4">
                   Find your community in our small groups. From Bible studies to
-                  life stages, there's a group where you belong.
+                  life stages, there&apos;s a group where you belong.
                 </p>
                 <div className="flex items-center gap-2 text-sm font-semibold text-primary">
                   <svg

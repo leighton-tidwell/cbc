@@ -10,7 +10,9 @@ interface LatestSermonAnimationProps {
   children: React.ReactNode;
 }
 
-export default function LatestSermonAnimation({ children }: LatestSermonAnimationProps) {
+export default function LatestSermonAnimation({
+  children,
+}: LatestSermonAnimationProps) {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
