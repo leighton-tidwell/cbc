@@ -2,6 +2,7 @@ import Hero from '@/components/Hero';
 import Services from '@/components/Services';
 import WelcomeHome from '@/components/WelcomeHome';
 import EventsPreview from '@/components/EventsPreview';
+import LifeAtCalvary from '@/components/LifeAtCalvary';
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
       <Services />
       <WelcomeHome />
       <EventsPreview />
+      <LifeAtCalvary />
     </main>
   );
 }

@@ -224,7 +224,7 @@ export default function WelcomeHome() {
 
               {/* Location Card */}
               <div className="info-visual flex items-center justify-center order-2 lg:order-2 mt-8 lg:mt-0">
-                <div className="location-card bg-white rounded-lg overflow-hidden shadow-lg lg:shadow-xl opacity-0 translate-y-[30px] w-full">
+                <div id="find-us" className="location-card bg-white rounded-lg overflow-hidden shadow-lg lg:shadow-xl opacity-0 translate-y-[30px] w-full">
                   <div className="location-header p-6 lg:p-16 bg-white text-center border-b border-gray-200">
                     <p className="header-subtitle text-xs lg:text-sm text-primary uppercase tracking-wider mb-2 font-medium">
                       Come as you are
