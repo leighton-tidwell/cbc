@@ -15,9 +15,9 @@ export default function LatestSermon() {
         {/* Section Header */}
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-3 mb-6">
-            <div className="h-[1px] w-12 bg-gradient-to-r from-transparent to-primary" />
+            <div className="sermon-decoration h-[1px] w-12 bg-gradient-to-r from-transparent to-primary" />
             <span className="text-primary font-semibold uppercase tracking-wider text-sm">Latest Message</span>
-            <div className="h-[1px] w-12 bg-gradient-to-l from-transparent to-primary" />
+            <div className="sermon-decoration h-[1px] w-12 bg-gradient-to-l from-transparent to-primary" />
           </div>
           
           <h2 className="sermon-title text-4xl md:text-5xl lg:text-6xl font-heading font-extrabold text-text-color mb-6 tracking-[-0.02em] relative">
@@ -25,7 +25,7 @@ export default function LatestSermon() {
             <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-[60px] h-1 bg-primary rounded-sm" />
           </h2>
           
-          <p className="text-xl text-text-light max-w-3xl mx-auto">
+          <p className="sermon-subtitle text-xl text-text-light max-w-3xl mx-auto">
             Catch up on the latest message from Pastor Colton Grisham
           </p>
         </div>

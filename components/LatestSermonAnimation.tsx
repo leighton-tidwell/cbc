@@ -15,6 +15,18 @@ export default function LatestSermonAnimation({ children }: LatestSermonAnimatio
 
   useEffect(() => {
     const ctx = gsap.context(() => {
+      // Animate decorative line
+      gsap.from('.sermon-decoration > div', {
+        scaleX: 0,
+        duration: 0.8,
+        ease: 'power2.inOut',
+        scrollTrigger: {
+          trigger: '.sermon-decoration',
+          start: 'top 85%',
+          once: true,
+        },
+      });
+
       // Animate title
       gsap.from('.sermon-title', {
         y: 30,
@@ -23,6 +35,20 @@ export default function LatestSermonAnimation({ children }: LatestSermonAnimatio
         scrollTrigger: {
           trigger: '.sermon-title',
           start: 'top 80%',
+          once: true,
+        },
+      });
+
+      // Animate subtitle
+      gsap.from('.sermon-subtitle', {
+        y: 20,
+        opacity: 0,
+        duration: 0.8,
+        delay: 0.2,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: '.sermon-subtitle',
+          start: 'top 85%',
           once: true,
         },
       });
