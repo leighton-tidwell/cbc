@@ -15,7 +15,7 @@ export default function LifeAtCalvary() {
         <LifeAtCalvaryAnimation>
           {/* Section Header */}
           <div className="text-center mb-20">
-            <div className="inline-flex items-center gap-3 mb-6">
+            <div className="life-decoration inline-flex items-center gap-3 mb-6">
               <div className="h-[1px] w-12 bg-gradient-to-r from-transparent to-primary" />
               <span className="text-primary font-semibold uppercase tracking-wider text-sm">
                 Experience More
@@ -27,7 +27,7 @@ export default function LifeAtCalvary() {
               Life at Calvary
             </h2>
 
-            <p className="text-xl text-text-light max-w-3xl mx-auto leading-relaxed">
+            <p className="life-subtitle text-xl text-text-light max-w-3xl mx-auto leading-relaxed">
               More than just Sunday services — we're a family united by faith,
               growing together through every season of life.
             </p>
@@ -49,7 +49,7 @@ export default function LifeAtCalvary() {
 
                 <div className="p-10 lg:p-16">
                   <div className="inline-flex items-center gap-2 mb-4">
-                    <div className="w-3 h-3 bg-primary rounded-full animate-pulse" />
+                    <div className="pulse-badge w-3 h-3 bg-primary rounded-full" />
                     <span className="text-primary font-bold text-sm uppercase tracking-wider">
                       First Wednesday
                     </span>
@@ -214,7 +214,7 @@ export default function LifeAtCalvary() {
           </div>
 
           {/* Bottom CTA */}
-          <div className="text-center">
+          <div className="life-cta text-center">
             <p className="text-lg text-text-light mb-6">
               Ready to get connected?
             </p>

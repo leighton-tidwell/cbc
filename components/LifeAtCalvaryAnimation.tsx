@@ -15,12 +15,24 @@ export default function LifeAtCalvaryAnimation({ children }: LifeAtCalvaryAnimat
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Animate title
+      // Animate decorative line
+      gsap.from('.life-decoration > div', {
+        scaleX: 0,
+        duration: 0.8,
+        ease: 'power2.inOut',
+        scrollTrigger: {
+          trigger: '.life-decoration',
+          start: 'top 85%',
+          once: true,
+        },
+      });
+
+      // Animate title with subtle effect
       gsap.from('.life-title', {
-        y: 40,
+        y: 30,
         opacity: 0,
-        duration: 1,
-        ease: 'power3.out',
+        duration: 0.8,
+        ease: 'power2.out',
         scrollTrigger: {
           trigger: '.life-title',
           start: 'top 80%',
@@ -28,29 +40,55 @@ export default function LifeAtCalvaryAnimation({ children }: LifeAtCalvaryAnimat
         },
       });
 
-      // Animate cards with stagger
-      gsap.from('.life-card', {
-        y: 60,
+      // Animate subtitle
+      gsap.from('.life-subtitle', {
+        y: 20,
         opacity: 0,
-        duration: 1,
-        stagger: 0.2,
-        ease: 'power3.out',
+        duration: 0.8,
+        delay: 0.2,
+        ease: 'power2.out',
         scrollTrigger: {
-          trigger: containerRef.current,
-          start: 'top 70%',
+          trigger: '.life-subtitle',
+          start: 'top 85%',
           once: true,
         },
       });
 
-      // Special animation for the fellowship meal card
-      gsap.from('.life-card:first-child .group', {
-        scale: 0.95,
+      // Animate cards with refined stagger
+      const cards = gsap.utils.toArray('.life-card');
+      
+      cards.forEach((card, index) => {
+        gsap.from(card as Element, {
+          y: 40,
+          opacity: 0,
+          duration: 0.8,
+          delay: index * 0.1,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: card as Element,
+            start: 'top 75%',
+            once: true,
+          },
+        });
+      });
+
+      // Subtle pulse animation for first Wednesday badge
+      gsap.to('.pulse-badge', {
+        scale: 1.05,
+        duration: 2,
+        repeat: -1,
+        yoyo: true,
+        ease: 'power1.inOut',
+      });
+
+      // CTA button entrance
+      gsap.from('.life-cta', {
+        y: 20,
         opacity: 0,
-        duration: 1.2,
-        ease: 'power3.out',
+        duration: 0.8,
         scrollTrigger: {
-          trigger: '.life-card:first-child',
-          start: 'top 75%',
+          trigger: '.life-cta',
+          start: 'top 85%',
           once: true,
         },
       });
