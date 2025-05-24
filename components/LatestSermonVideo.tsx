@@ -2,13 +2,13 @@
 
 import { useEffect, useState, useRef } from 'react';
 
-interface FacebookVideo {
-  id: string;
-  description?: string;
-  title?: string;
-  permalink_url: string;
-  created_time: string;
-}
+// interface FacebookVideo {
+//   id: string;
+//   description?: string;
+//   title?: string;
+//   permalink_url: string;
+//   created_time: string;
+// }
 
 export default function LatestSermonVideo() {
   const [isLoaded, setIsLoaded] = useState(false);
