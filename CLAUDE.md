@@ -43,9 +43,15 @@ This is a Next.js 15 application for Calvary Baptist Church using the App Router
 
 ### Asset Locations
 
-- **Logo**: `public/images/logo.png` and `public/images/logo_4.png`
+- **Logo**: `public/images/logo_white.png` (white version) and `public/images/logo_black.png` (black version)
 - **Church Interior**: `public/images/location.jpg`
 - **Stock Photos**: `public/images/stock/`
+
+### Logo Usage
+
+- Use `logo_white.png` on dark backgrounds (e.g., over hero images, transparent header)
+- Use `logo_black.png` on light backgrounds (e.g., solid white header when scrolled)
+- Header component automatically switches between logos based on scroll position
 
 ### Mobile Considerations
 

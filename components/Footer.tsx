@@ -19,11 +19,11 @@ export default function Footer() {
             <div className="lg:col-span-5">
               <Link href="/" className="inline-block mb-6">
                 <Image
-                  src="/images/logo.png"
+                  src="/images/logo_white.png"
                   alt="Calvary Baptist Church"
                   width={180}
                   height={60}
-                  className="h-12 w-auto brightness-0 invert opacity-90"
+                  className="h-12 w-auto opacity-90"
                 />
               </Link>
               <p className="text-gray-400 text-lg leading-relaxed mb-6 max-w-md">

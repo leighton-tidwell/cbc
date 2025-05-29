@@ -40,7 +40,7 @@ export default function Hero() {
           <div className="hero-logo-mobile hidden max-[768px]:block mb-8 mx-auto w-[150px] h-[150px] relative">
             <div className="absolute inset-0 bg-black/20 backdrop-blur-sm rounded-full shadow-2xl"></div>
             <Image
-              src="/images/logo_4.png"
+              src="/images/logo_white.png"
               alt="Calvary Baptist Church"
               width={150}
               height={150}

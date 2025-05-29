@@ -80,7 +80,7 @@ export default function Header() {
       <div className="w-full max-w-[1200px] mx-auto px-4 flex justify-between items-center">
         <Link href="/" className="flex items-center group">
           <Image
-            src="/images/logo_4.png"
+            src={scrolled ? "/images/logo_black.png" : "/images/logo_white.png"}
             alt="Calvary Baptist Church Logo"
             width={getLogoSize()}
             height={getLogoSize()}
