@@ -16,8 +16,10 @@
     opacity: 0;
   }
 
+
   /* Ensure cards are visible if JS is disabled */
-  .no-js .service-card {
+  .no-js .service-card,
+  .no-js .mission-card {
     transform: none;
     opacity: 1;
   }

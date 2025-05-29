@@ -16,6 +16,9 @@ export default function AboutContentAnimation({
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    // Ensure ScrollTrigger is refreshed on mount
+    ScrollTrigger.refresh();
+    
     const ctx = gsap.context(() => {
       // Timeline items animation
       gsap.utils.toArray('.timeline-content').forEach((item) => {
@@ -33,33 +36,51 @@ export default function AboutContentAnimation({
         });
       });
 
-      // Mission cards animation
-      gsap.from('.mission-card', {
-        opacity: 0,
-        y: 40,
-        stagger: 0.15,
-        duration: 0.6,
-        scrollTrigger: {
-          trigger: '.mission-grid',
-          start: 'top 70%',
-          toggleActions: 'play none none reverse',
-        },
+      // Mission cards animation - animate each card individually for better reliability
+      gsap.utils.toArray('.mission-card').forEach((card, index) => {
+        gsap.fromTo(card as HTMLElement, 
+          {
+            opacity: 0,
+            y: 40,
+          },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.6,
+            delay: index * 0.1,
+            scrollTrigger: {
+              trigger: card as HTMLElement,
+              start: 'top 90%',
+              end: 'top 60%',
+              toggleActions: 'play none none reverse',
+              refreshPriority: index,
+            },
+          }
+        );
       });
 
-      // Belief cards animation
-      gsap.from('.belief-card', {
-        opacity: 0,
-        scale: 0.95,
-        stagger: {
-          from: 'random',
-          amount: 0.5,
-        },
-        duration: 0.6,
-        scrollTrigger: {
-          trigger: '.beliefs-grid',
-          start: 'top 70%',
-          toggleActions: 'play none none reverse',
-        },
+      // Belief cards animation - animate each card individually for better reliability
+      gsap.utils.toArray('.belief-card').forEach((card, index) => {
+        gsap.fromTo(card as HTMLElement,
+          {
+            opacity: 0,
+            scale: 0.95,
+          },
+          {
+            opacity: 1,
+            scale: 1,
+            duration: 0.6,
+            delay: index * 0.08,
+            ease: 'power2.out',
+            scrollTrigger: {
+              trigger: card as HTMLElement,
+              start: 'top 90%',
+              end: 'top 60%',
+              toggleActions: 'play none none reverse',
+              refreshPriority: index + 10, // Higher priority than mission cards
+            },
+          }
+        );
       });
 
       // Team members animation
@@ -109,9 +130,24 @@ export default function AboutContentAnimation({
           toggleActions: 'play none none reverse',
         },
       });
+
+      // Refresh ScrollTrigger after all animations are set up
+      setTimeout(() => {
+        ScrollTrigger.refresh();
+      }, 100);
     }, containerRef);
 
-    return () => ctx.revert();
+    // Handle window resize
+    const handleResize = () => {
+      ScrollTrigger.refresh();
+    };
+    
+    window.addEventListener('resize', handleResize);
+    
+    return () => {
+      window.removeEventListener('resize', handleResize);
+      ctx.revert();
+    };
   }, []);
 
   return <div ref={containerRef}>{children}</div>;
