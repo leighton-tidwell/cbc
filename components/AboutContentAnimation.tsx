@@ -18,11 +18,12 @@ export default function AboutContentAnimation({
   useEffect(() => {
     const ctx = gsap.context(() => {
       // Timeline items animation
-      gsap.utils.toArray('.timeline-item').forEach((item) => {
+      gsap.utils.toArray('.timeline-content').forEach((item) => {
         const element = item as HTMLElement;
+        const isRight = element.closest('.timeline-item')?.classList.contains('timeline-right');
         gsap.from(element, {
           opacity: 0,
-          x: element.classList.contains('timeline-right') ? 50 : -50,
+          x: isRight ? 50 : -50,
           duration: 0.8,
           scrollTrigger: {
             trigger: element,

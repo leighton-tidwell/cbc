@@ -91,70 +91,90 @@ export default function AboutPage() {
               {/* Timeline Items */}
               <div className="space-y-12 md:space-y-24">
                 {/* 1965 */}
-                <div className="timeline-item timeline-left flex flex-col md:flex-row items-center md:justify-end gap-8">
-                  <div className="md:w-1/2 md:pr-16 text-center md:text-right bg-white/90 backdrop-blur-sm p-8 rounded-2xl shadow-lg">
-                    <div className="inline-block px-6 py-3 bg-primary text-white rounded-full font-bold mb-4 shadow-md">
-                      1965
+                <div className="timeline-item timeline-left relative">
+                  <div className="grid md:grid-cols-2 gap-8">
+                    <div className="timeline-content text-center md:text-right bg-white/90 backdrop-blur-sm p-8 rounded-2xl shadow-lg">
+                      <div className="inline-block px-6 py-3 bg-primary text-white rounded-full font-bold mb-4 shadow-md">
+                        1965
+                      </div>
+                      <h3 className="text-2xl font-heading font-bold mb-3 text-gray-900">The Beginning</h3>
+                      <p className="text-gray-700 leading-relaxed">
+                        A small group of faithful believers gathered to establish Calvary Baptist Church, driven by a vision to create a place where everyone could experience God&apos;s love.
+                      </p>
                     </div>
-                    <h3 className="text-2xl font-heading font-bold mb-3 text-gray-900">The Beginning</h3>
-                    <p className="text-gray-700 leading-relaxed">
-                      A small group of faithful believers gathered to establish Calvary Baptist Church, driven by a vision to create a place where everyone could experience God&apos;s love.
-                    </p>
+                    <div className="hidden md:block"></div>
                   </div>
-                  <div className="hidden md:block w-4 h-4 bg-primary rounded-full relative z-10 shadow-lg">
-                    <div className="absolute inset-0 bg-primary rounded-full animate-ping"></div>
+                  {/* Centered dot */}
+                  <div className="hidden md:block absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                    <div className="w-4 h-4 bg-primary rounded-full relative z-10 shadow-lg">
+                      <div className="absolute inset-0 bg-primary rounded-full animate-ping"></div>
+                    </div>
                   </div>
-                  <div className="md:w-1/2"></div>
                 </div>
 
                 {/* 1980s */}
-                <div className="timeline-item timeline-right flex flex-col md:flex-row items-center gap-8">
-                  <div className="md:w-1/2"></div>
-                  <div className="hidden md:block w-4 h-4 bg-primary rounded-full relative z-10 shadow-lg">
-                    <div className="absolute inset-0 bg-primary rounded-full animate-ping"></div>
-                  </div>
-                  <div className="md:w-1/2 md:pl-16 text-center md:text-left bg-white/90 backdrop-blur-sm p-8 rounded-2xl shadow-lg">
-                    <div className="inline-block px-6 py-3 bg-primary text-white rounded-full font-bold mb-4 shadow-md">
-                      1980s
+                <div className="timeline-item timeline-right relative">
+                  <div className="grid md:grid-cols-2 gap-8">
+                    <div className="hidden md:block"></div>
+                    <div className="timeline-content text-center md:text-left bg-white/90 backdrop-blur-sm p-8 rounded-2xl shadow-lg">
+                      <div className="inline-block px-6 py-3 bg-primary text-white rounded-full font-bold mb-4 shadow-md">
+                        1980s
+                      </div>
+                      <h3 className="text-2xl font-heading font-bold mb-3 text-gray-900">Growing Together</h3>
+                      <p className="text-gray-700 leading-relaxed">
+                        Our church family expanded, launching youth programs and community outreach initiatives that touched countless lives in Merkel and beyond.
+                      </p>
                     </div>
-                    <h3 className="text-2xl font-heading font-bold mb-3 text-gray-900">Growing Together</h3>
-                    <p className="text-gray-700 leading-relaxed">
-                      Our church family expanded, launching youth programs and community outreach initiatives that touched countless lives in Merkel and beyond.
-                    </p>
+                  </div>
+                  {/* Centered dot */}
+                  <div className="hidden md:block absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                    <div className="w-4 h-4 bg-primary rounded-full relative z-10 shadow-lg">
+                      <div className="absolute inset-0 bg-primary rounded-full animate-ping"></div>
+                    </div>
                   </div>
                 </div>
 
                 {/* 2000s */}
-                <div className="timeline-item timeline-left flex flex-col md:flex-row items-center md:justify-end gap-8">
-                  <div className="md:w-1/2 md:pr-16 text-center md:text-right bg-white/90 backdrop-blur-sm p-8 rounded-2xl shadow-lg">
-                    <div className="inline-block px-6 py-3 bg-primary text-white rounded-full font-bold mb-4 shadow-md">
-                      2000s
+                <div className="timeline-item timeline-left relative">
+                  <div className="grid md:grid-cols-2 gap-8">
+                    <div className="timeline-content text-center md:text-right bg-white/90 backdrop-blur-sm p-8 rounded-2xl shadow-lg">
+                      <div className="inline-block px-6 py-3 bg-primary text-white rounded-full font-bold mb-4 shadow-md">
+                        2000s
+                      </div>
+                      <h3 className="text-2xl font-heading font-bold mb-3 text-gray-900">Building Our Home</h3>
+                      <p className="text-gray-700 leading-relaxed">
+                        We moved into our current location at 506 Runnels St., creating a warm and welcoming space for worship, fellowship, and spiritual growth.
+                      </p>
                     </div>
-                    <h3 className="text-2xl font-heading font-bold mb-3 text-gray-900">Building Our Home</h3>
-                    <p className="text-gray-700 leading-relaxed">
-                      We moved into our current location at 506 Runnels St., creating a warm and welcoming space for worship, fellowship, and spiritual growth.
-                    </p>
+                    <div className="hidden md:block"></div>
                   </div>
-                  <div className="hidden md:block w-4 h-4 bg-primary rounded-full relative z-10 shadow-lg">
-                    <div className="absolute inset-0 bg-primary rounded-full animate-ping"></div>
+                  {/* Centered dot */}
+                  <div className="hidden md:block absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                    <div className="w-4 h-4 bg-primary rounded-full relative z-10 shadow-lg">
+                      <div className="absolute inset-0 bg-primary rounded-full animate-ping"></div>
+                    </div>
                   </div>
-                  <div className="md:w-1/2"></div>
                 </div>
 
                 {/* Today */}
-                <div className="timeline-item timeline-right flex flex-col md:flex-row items-center gap-8">
-                  <div className="md:w-1/2"></div>
-                  <div className="hidden md:block w-4 h-4 bg-primary rounded-full relative z-10 shadow-lg">
-                    <div className="absolute inset-0 bg-primary rounded-full animate-ping"></div>
-                  </div>
-                  <div className="md:w-1/2 md:pl-16 text-center md:text-left bg-white/90 backdrop-blur-sm p-8 rounded-2xl shadow-lg">
-                    <div className="inline-block px-6 py-3 bg-primary text-white rounded-full font-bold mb-4 shadow-md">
-                      Today
+                <div className="timeline-item timeline-right relative">
+                  <div className="grid md:grid-cols-2 gap-8">
+                    <div className="hidden md:block"></div>
+                    <div className="timeline-content text-center md:text-left bg-white/90 backdrop-blur-sm p-8 rounded-2xl shadow-lg">
+                      <div className="inline-block px-6 py-3 bg-primary text-white rounded-full font-bold mb-4 shadow-md">
+                        Today
+                      </div>
+                      <h3 className="text-2xl font-heading font-bold mb-3 text-gray-900">Continuing the Mission</h3>
+                      <p className="text-gray-700 leading-relaxed">
+                        Under Pastor Colton Grisham&apos;s leadership, we continue to be a beacon of hope, offering multiple services, online streaming, and community programs for all ages.
+                      </p>
                     </div>
-                    <h3 className="text-2xl font-heading font-bold mb-3 text-gray-900">Continuing the Mission</h3>
-                    <p className="text-gray-700 leading-relaxed">
-                      Under Pastor Colton Grisham&apos;s leadership, we continue to be a beacon of hope, offering multiple services, online streaming, and community programs for all ages.
-                    </p>
+                  </div>
+                  {/* Centered dot */}
+                  <div className="hidden md:block absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                    <div className="w-4 h-4 bg-primary rounded-full relative z-10 shadow-lg">
+                      <div className="absolute inset-0 bg-primary rounded-full animate-ping"></div>
+                    </div>
                   </div>
                 </div>
               </div>
