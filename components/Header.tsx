@@ -107,33 +107,37 @@ export default function Header() {
           <button
             className={`md:hidden flex flex-col gap-1 p-2 z-[101] ${
               mobileMenuOpen ? 'fixed right-4' : ''
+            } ${
+              !shouldShowDarkHeader && !mobileMenuOpen
+                ? 'drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)]'
+                : ''
             }`}
             aria-label="Toggle menu"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             <span
               className={`block w-6 h-0.5 transition-all duration-[300ms] ease-[cubic-bezier(0.4,0,0.2,1)] ${
-                (scrolled || isEventsPage) &&
-                !mobileMenuOpen &&
-                screenSize !== 'mobile'
+                mobileMenuOpen
+                  ? 'bg-primary'
+                  : shouldShowDarkHeader
                   ? 'bg-primary'
                   : 'bg-white'
               } ${mobileMenuOpen ? 'rotate-45 translate-y-[6px]' : ''}`}
             ></span>
             <span
               className={`block w-6 h-0.5 transition-all duration-[300ms] ease-[cubic-bezier(0.4,0,0.2,1)] ${
-                (scrolled || isEventsPage) &&
-                !mobileMenuOpen &&
-                screenSize !== 'mobile'
+                mobileMenuOpen
+                  ? 'bg-primary'
+                  : shouldShowDarkHeader
                   ? 'bg-primary'
                   : 'bg-white'
               } ${mobileMenuOpen ? 'opacity-0' : ''}`}
             ></span>
             <span
               className={`block w-6 h-0.5 transition-all duration-[300ms] ease-[cubic-bezier(0.4,0,0.2,1)] ${
-                (scrolled || isEventsPage) &&
-                !mobileMenuOpen &&
-                screenSize !== 'mobile'
+                mobileMenuOpen
+                  ? 'bg-primary'
+                  : shouldShowDarkHeader
                   ? 'bg-primary'
                   : 'bg-white'
               } ${mobileMenuOpen ? '-rotate-45 -translate-y-[6px]' : ''}`}
@@ -154,6 +158,10 @@ export default function Header() {
                     before:scale-x-0 before:transition-transform before:duration-[300ms] before:ease-[cubic-bezier(0.4,0,0.2,1)]
                     ${pathname === item.href ? 'before:scale-x-100' : 'hover:before:scale-x-100'}
                   `}
+                  onClick={() => {
+                    // Scroll to top when clicking nav links
+                    window.scrollTo(0, 0);
+                  }}
                 >
                   {item.label}
                 </Link>
@@ -175,7 +183,11 @@ export default function Header() {
                     className={`text-2xl font-medium p-8 transition-colors duration-[300ms] ease-[cubic-bezier(0.4,0,0.2,1)] text-text-color hover:text-primary drop-shadow-none
                       ${pathname === item.href ? 'text-primary' : ''}
                     `}
-                    onClick={() => setMobileMenuOpen(false)}
+                    onClick={() => {
+                      setMobileMenuOpen(false);
+                      // Scroll to top when clicking nav links
+                      window.scrollTo(0, 0);
+                    }}
                   >
                     {item.label}
                   </Link>

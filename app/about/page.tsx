@@ -513,17 +513,21 @@ export default function AboutPage() {
           <div className="absolute inset-0">
             {/* Dynamic gradient mesh */}
             <div className="absolute -top-24 -right-24 w-[600px] h-[600px] bg-gradient-to-br from-primary/20 to-blue-400/10 rounded-full blur-3xl animate-pulse"></div>
-            <div className="absolute -bottom-24 -left-24 w-[500px] h-[500px] bg-gradient-to-tr from-amber-300/15 to-primary/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
+            <div
+              className="absolute -bottom-24 -left-24 w-[500px] h-[500px] bg-gradient-to-tr from-amber-300/15 to-primary/10 rounded-full blur-3xl animate-pulse"
+              style={{ animationDelay: '2s' }}
+            ></div>
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-gradient-to-r from-primary/5 to-transparent rounded-full blur-3xl"></div>
-            
+
             {/* Geometric pattern overlay */}
-            <div className="absolute inset-0 opacity-[0.03]"
+            <div
+              className="absolute inset-0 opacity-[0.03]"
               style={{
                 backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%230A4D68' fill-opacity='1'%3E%3Cpath d='M30 30v-15h-2v15H13v2h15v15h2V32h15v-2H30z'/%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/svg%3E")`,
-                backgroundSize: '60px 60px'
+                backgroundSize: '60px 60px',
               }}
             ></div>
-            
+
             {/* Light rays effect */}
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full opacity-10">
               <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[2px] h-full bg-gradient-to-b from-primary to-transparent"></div>
