@@ -19,17 +19,8 @@ export default function AboutHeroAnimation({
     const ctx = gsap.context(() => {
       const tl = gsap.timeline({ defaults: { ease: 'power2.out' } });
 
-      // Hero background parallax
-      gsap.to('.about-hero-bg', {
-        yPercent: 50,
-        ease: 'none',
-        scrollTrigger: {
-          trigger: '.about-hero',
-          start: 'top top',
-          end: 'bottom top',
-          scrub: true,
-        },
-      });
+      // Set initial states for stats
+      gsap.set('.about-hero-stats .stat-item', { opacity: 0, scale: 0.8 });
 
       // Hero content animation
       tl.from('.about-hero-badge', {
@@ -56,6 +47,16 @@ export default function AboutHeroAnimation({
           },
           '-=0.4'
         )
+        .to(
+          '.about-hero-stats .stat-item',
+          {
+            opacity: 1,
+            scale: 1,
+            duration: 0.6,
+            stagger: 0.1,
+          },
+          '-=0.4'
+        )
         .from(
           '.about-hero-cta',
           {
@@ -65,6 +66,17 @@ export default function AboutHeroAnimation({
           },
           '-=0.3'
         );
+
+      // Parallax effect for background orbs
+      gsap.to('.absolute .animate-pulse', {
+        y: -50,
+        scrollTrigger: {
+          trigger: '.about-hero',
+          start: 'top top',
+          end: 'bottom top',
+          scrub: 1,
+        },
+      });
     }, containerRef);
 
     return () => ctx.revert();

@@ -18,12 +18,14 @@ export default function AboutContentAnimation({
   useEffect(() => {
     // Ensure ScrollTrigger is refreshed on mount
     ScrollTrigger.refresh();
-    
+
     const ctx = gsap.context(() => {
       // Timeline items animation
       gsap.utils.toArray('.timeline-content').forEach((item) => {
         const element = item as HTMLElement;
-        const isRight = element.closest('.timeline-item')?.classList.contains('timeline-right');
+        const isRight = element
+          .closest('.timeline-item')
+          ?.classList.contains('timeline-right');
         gsap.from(element, {
           opacity: 0,
           x: isRight ? 50 : -50,
@@ -38,7 +40,8 @@ export default function AboutContentAnimation({
 
       // Mission cards animation - animate each card individually for better reliability
       gsap.utils.toArray('.mission-card').forEach((card, index) => {
-        gsap.fromTo(card as HTMLElement, 
+        gsap.fromTo(
+          card as HTMLElement,
           {
             opacity: 0,
             y: 40,
@@ -61,7 +64,8 @@ export default function AboutContentAnimation({
 
       // Belief cards animation - animate each card individually for better reliability
       gsap.utils.toArray('.belief-card').forEach((card, index) => {
-        gsap.fromTo(card as HTMLElement,
+        gsap.fromTo(
+          card as HTMLElement,
           {
             opacity: 0,
             scale: 0.95,
@@ -102,7 +106,7 @@ export default function AboutContentAnimation({
         const element = counter as HTMLElement;
         const target = parseInt(element.getAttribute('data-target') || '0');
         const obj = { value: 0 };
-        
+
         gsap.to(obj, {
           value: target,
           duration: 2,
@@ -141,9 +145,9 @@ export default function AboutContentAnimation({
     const handleResize = () => {
       ScrollTrigger.refresh();
     };
-    
+
     window.addEventListener('resize', handleResize);
-    
+
     return () => {
       window.removeEventListener('resize', handleResize);
       ctx.revert();

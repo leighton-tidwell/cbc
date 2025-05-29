@@ -51,16 +51,16 @@ export default function FooterWatermark() {
                 'EST. 1965',
                 'SERVING CHRIST',
                 'LOVING PEOPLE',
-                'MAKING DISCIPLES'
+                'MAKING DISCIPLES',
               ];
-              
+
               // Random positioning and rotation for each phrase
               const randomX = (i * 217) % 100; // Prime number for better distribution
               const randomY = (i * 131) % 100;
               const randomRotation = ((i * 47) % 60) - 30; // -30 to 30 degrees
               const randomSize = 0.8 + ((i * 23) % 40) / 100; // 0.8 to 1.2
               const randomOpacity = 0.3 + ((i * 31) % 40) / 100; // 0.3 to 0.7
-              
+
               return (
                 <div
                   key={i}
