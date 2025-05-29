@@ -128,9 +128,12 @@ export default function ContactPage() {
                   <h3 className="text-xl font-heading font-bold mb-2">
                     Call Us
                   </h3>
-                  <p className="text-2xl font-bold text-primary mb-4">
+                  <a
+                    href="tel:3259285120"
+                    className="block text-2xl font-bold text-primary mb-4 hover:text-primary-dark transition-colors duration-200"
+                  >
                     325.928.5120
-                  </p>
+                  </a>
                   <p className="text-text-light text-sm">
                     Office Hours:
                     <br />
@@ -164,9 +167,12 @@ export default function ContactPage() {
                   <h3 className="text-xl font-heading font-bold mb-2">
                     Email Us
                   </h3>
-                  <p className="text-lg font-medium text-blue-500 mb-4 break-all">
+                  <a
+                    href="mailto:officeadmin@cbcmerkel.org"
+                    className="block text-lg font-medium text-blue-500 mb-4 break-all hover:text-blue-600 transition-colors duration-200"
+                  >
                     officeadmin@cbcmerkel.org
-                  </p>
+                  </a>
                   <p className="text-text-light text-sm">
                     We&apos;ll respond within
                     <br />
@@ -204,11 +210,16 @@ export default function ContactPage() {
                   <h3 className="text-xl font-heading font-bold mb-2">
                     Visit Us
                   </h3>
-                  <p className="text-lg font-medium text-green-500 mb-4">
+                  <a
+                    href="https://maps.google.com/?q=506+Runnels+St,+Merkel,+TX+79536"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block text-lg font-medium text-green-500 mb-4 hover:text-green-600 transition-colors duration-200"
+                  >
                     506 Runnels St
                     <br />
                     Merkel, TX 79536
-                  </p>
+                  </a>
                   <p className="text-text-light text-sm">
                     Sunday Service: 10:00 AM
                     <br />
@@ -444,9 +455,8 @@ export default function ContactPage() {
                   Is there parking available?
                 </h3>
                 <p className="text-text-light pl-9">
-                  Yes! We have ample parking in our main lot and overflow
-                  parking nearby. Handicap accessible parking is available near
-                  the main entrance.
+                  Yes! We have ample parking available in our main lot. Handicap
+                  accessible parking is available near the main entrance.
                 </p>
               </div>
 
