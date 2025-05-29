@@ -355,8 +355,8 @@ export default function EventsPage() {
             </div>
 
             {/* Category Filter */}
-            <div className="mb-12">
-              <div className="flex items-center gap-4 overflow-x-auto pb-2 scrollbar-hide">
+            <div className="mb-12 -mx-4 px-4 md:mx-0 md:px-0">
+              <div className="flex items-start gap-3 overflow-x-auto pb-3 scrollbar-hide">
                 {categories.map((category) => (
                   <button
                     key={category.id}
@@ -364,11 +364,11 @@ export default function EventsPage() {
                       setActiveCategory(category.id as EventCategory)
                     }
                     className={`
-                      inline-flex items-center gap-2 px-6 py-3 rounded-full font-medium 
-                      whitespace-nowrap transition-all duration-300
+                      inline-flex items-center gap-2 px-5 py-2.5 rounded-full font-medium text-sm
+                      whitespace-nowrap transition-all duration-300 flex-shrink-0
                       ${
                         activeCategory === category.id
-                          ? 'bg-primary text-white shadow-lg scale-105'
+                          ? 'bg-primary text-white'
                           : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                       }
                     `}
