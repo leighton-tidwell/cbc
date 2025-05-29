@@ -30,36 +30,53 @@ export default function FooterWatermark() {
         </div>
       </div>
 
-      {/* Layer 2: Flowing text pattern */}
-      <div className="absolute inset-0 opacity-[0.1]">
-        <div
-          className="text-white font-medium text-xs md:text-sm tracking-[0.2em] md:tracking-[0.3em] leading-relaxed md:leading-loose"
-          style={{
-            backgroundImage: `repeating-linear-gradient(
-              -45deg,
-              transparent,
-              transparent 100px,
-              rgba(255, 255, 255, 0.03) 100px,
-              rgba(255, 255, 255, 0.03) 200px
-            )`,
-          }}
-        >
-          {Array(25)
+      {/* Layer 2: Static text pattern */}
+      <div className="absolute inset-0 opacity-[0.08]">
+        <div className="relative w-full h-full overflow-hidden">
+          {Array(15)
             .fill(null)
-            .map((_, i) => (
-              <div
-                key={i}
-                className="whitespace-nowrap overflow-hidden py-1 md:py-2"
-                style={{
-                  animation: `flow-${i % 3} ${30 + i * 2}s linear infinite`,
-                  animationDelay: `${i * 0.5}s`,
-                  transform: `translateX(${i % 2 === 0 ? '-100%' : '0'})`,
-                }}
-              >
-                ORDINARY PEOPLE • EXTRAORDINARY GOD • CALVARY BAPTIST CHURCH •
-                MERKEL TX • FAITH • HOPE • LOVE • COMMUNITY •
-              </div>
-            ))}
+            .map((_, i) => {
+              const phrases = [
+                'ORDINARY PEOPLE',
+                'EXTRAORDINARY GOD',
+                'CALVARY BAPTIST CHURCH',
+                'MERKEL TX',
+                'FAITH',
+                'HOPE',
+                'LOVE',
+                'COMMUNITY',
+                'WORSHIP',
+                'PRAYER',
+                'FELLOWSHIP',
+                'EST. 1965',
+                'SERVING CHRIST',
+                'LOVING PEOPLE',
+                'MAKING DISCIPLES'
+              ];
+              
+              // Random positioning and rotation for each phrase
+              const randomX = (i * 217) % 100; // Prime number for better distribution
+              const randomY = (i * 131) % 100;
+              const randomRotation = ((i * 47) % 60) - 30; // -30 to 30 degrees
+              const randomSize = 0.8 + ((i * 23) % 40) / 100; // 0.8 to 1.2
+              const randomOpacity = 0.3 + ((i * 31) % 40) / 100; // 0.3 to 0.7
+              
+              return (
+                <div
+                  key={i}
+                  className="absolute text-white font-medium whitespace-nowrap"
+                  style={{
+                    left: `${randomX}%`,
+                    top: `${randomY}%`,
+                    transform: `rotate(${randomRotation}deg) scale(${randomSize})`,
+                    opacity: randomOpacity,
+                    fontSize: `${0.75 + randomSize * 0.25}rem`,
+                  }}
+                >
+                  {phrases[i % phrases.length]}
+                </div>
+              );
+            })}
         </div>
       </div>
 
