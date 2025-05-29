@@ -121,3 +121,202 @@ export function useCardAnimation(cardClass: string) {
     };
   }, [cardClass]);
 }
+
+export const useWelcomeHomeAnimation = () => {
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+
+    const ctx = gsap.context(() => {
+      // Existing welcome home animations
+    });
+
+    return () => ctx.revert();
+  }, []);
+};
+
+export const useServicesAnimation = () => {
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+
+    const ctx = gsap.context(() => {
+      // Existing services animations
+    });
+
+    return () => ctx.revert();
+  }, []);
+};
+
+export const useLatestSermonAnimation = () => {
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+
+    const ctx = gsap.context(() => {
+      // Existing sermon animations
+    });
+
+    return () => ctx.revert();
+  }, []);
+};
+
+export const useEventsAnimation = () => {
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+
+    const ctx = gsap.context(() => {
+      // Existing events animations
+    });
+
+    return () => ctx.revert();
+  }, []);
+};
+
+export const useLifeAtCalvaryAnimation = () => {
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+
+    const ctx = gsap.context(() => {
+      // Existing life at calvary animations
+    });
+
+    return () => ctx.revert();
+  }, []);
+};
+
+export const useAboutHeroAnimation = () => {
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+
+    const ctx = gsap.context(() => {
+      const tl = gsap.timeline({ defaults: { ease: 'power2.out' } });
+
+      // Hero background parallax
+      gsap.to('.about-hero-bg', {
+        yPercent: 50,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: '.about-hero',
+          start: 'top top',
+          end: 'bottom top',
+          scrub: true,
+        },
+      });
+
+      // Hero content animation
+      tl.from('.about-hero-badge', {
+        opacity: 0,
+        y: 20,
+        duration: 0.6,
+      })
+        .from(
+          '.about-hero-title span',
+          {
+            opacity: 0,
+            y: 50,
+            stagger: 0.2,
+            duration: 0.8,
+          },
+          '-=0.3'
+        )
+        .from(
+          '.about-hero-subtitle',
+          {
+            opacity: 0,
+            y: 30,
+            duration: 0.6,
+          },
+          '-=0.4'
+        )
+        .from(
+          '.about-hero-cta',
+          {
+            opacity: 0,
+            scale: 0.9,
+            duration: 0.6,
+          },
+          '-=0.3'
+        );
+    });
+
+    return () => ctx.revert();
+  }, []);
+};
+
+export const useAboutContentAnimation = () => {
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+
+    const ctx = gsap.context(() => {
+      // Timeline items animation
+      gsap.utils.toArray('.timeline-item').forEach((item) => {
+        const element = item as HTMLElement;
+        gsap.from(element, {
+          opacity: 0,
+          x: element.classList.contains('timeline-right') ? 50 : -50,
+          duration: 0.8,
+          scrollTrigger: {
+            trigger: element,
+            start: 'top 80%',
+            toggleActions: 'play none none reverse',
+          },
+        });
+      });
+
+      // Mission cards animation
+      gsap.from('.mission-card', {
+        opacity: 0,
+        y: 40,
+        stagger: 0.15,
+        duration: 0.6,
+        scrollTrigger: {
+          trigger: '.mission-grid',
+          start: 'top 70%',
+          toggleActions: 'play none none reverse',
+        },
+      });
+
+      // Belief cards animation
+      gsap.from('.belief-card', {
+        opacity: 0,
+        scale: 0.95,
+        stagger: {
+          from: 'random',
+          amount: 0.5,
+        },
+        duration: 0.6,
+        scrollTrigger: {
+          trigger: '.beliefs-grid',
+          start: 'top 70%',
+          toggleActions: 'play none none reverse',
+        },
+      });
+
+      // Team members animation
+      gsap.from('.team-member', {
+        opacity: 0,
+        y: 30,
+        stagger: 0.1,
+        duration: 0.6,
+        scrollTrigger: {
+          trigger: '.team-grid',
+          start: 'top 70%',
+          toggleActions: 'play none none reverse',
+        },
+      });
+
+      // CTA section animation
+      gsap.from('.about-cta-content > *', {
+        opacity: 0,
+        y: 30,
+        stagger: 0.2,
+        duration: 0.6,
+        scrollTrigger: {
+          trigger: '.about-cta',
+          start: 'top 70%',
+          toggleActions: 'play none none reverse',
+        },
+      });
+    });
+
+    return () => ctx.revert();
+  }, []);
+};

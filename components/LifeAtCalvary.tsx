@@ -4,7 +4,7 @@ import FindYourPlaceCTA from './FindYourPlaceCTA';
 
 export default function LifeAtCalvary() {
   return (
-    <section className="relative py-32 overflow-hidden bg-gradient-to-b from-white via-gray-50 to-white">
+    <section className="relative py-16 md:py-24 overflow-hidden bg-gradient-to-b from-white via-gray-50 to-white">
       {/* Decorative background elements */}
       <div className="absolute inset-0">
         <div className="absolute top-1/4 -left-64 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
