@@ -165,14 +165,14 @@ export default function AboutPage() {
                 {/* 1965 */}
                 <div className="timeline-item timeline-left relative">
                   <div className="grid md:grid-cols-2 gap-8">
-                    <div className="timeline-content text-center md:text-right bg-white/90 backdrop-blur-sm p-8 rounded-2xl shadow-lg">
-                      <div className="inline-block px-6 py-3 bg-primary text-white rounded-full font-bold mb-4 shadow-md">
+                    <div className="timeline-content text-center md:text-right bg-zinc-600 backdrop-blur-sm p-8 rounded-2xl shadow-lg">
+                      <div className="inline-block px-6 py-3 bg-zinc-800 text-white rounded-full font-bold mb-4 shadow-md">
                         1965
                       </div>
-                      <h3 className="text-2xl font-heading font-bold mb-3 text-gray-900">
+                      <h3 className="text-2xl font-heading font-bold mb-3 text-white">
                         The Beginning
                       </h3>
-                      <p className="text-gray-700 leading-relaxed">
+                      <p className="text-white/90 leading-relaxed">
                         A small group of faithful believers gathered to
                         establish Calvary Baptist Church, driven by a vision to
                         create a place where everyone could experience
@@ -193,14 +193,14 @@ export default function AboutPage() {
                 <div className="timeline-item timeline-right relative">
                   <div className="grid md:grid-cols-2 gap-8">
                     <div className="hidden md:block"></div>
-                    <div className="timeline-content text-center md:text-left bg-white/90 backdrop-blur-sm p-8 rounded-2xl shadow-lg">
-                      <div className="inline-block px-6 py-3 bg-primary text-white rounded-full font-bold mb-4 shadow-md">
+                    <div className="timeline-content text-center md:text-left bg-stone-600 backdrop-blur-sm p-8 rounded-2xl shadow-lg">
+                      <div className="inline-block px-6 py-3 bg-stone-800 text-white rounded-full font-bold mb-4 shadow-md">
                         1980s
                       </div>
-                      <h3 className="text-2xl font-heading font-bold mb-3 text-gray-900">
+                      <h3 className="text-2xl font-heading font-bold mb-3 text-white">
                         Growing Together
                       </h3>
-                      <p className="text-gray-700 leading-relaxed">
+                      <p className="text-white/90 leading-relaxed">
                         Our church family expanded, launching youth programs and
                         community outreach initiatives that touched countless
                         lives in Merkel and beyond.
@@ -218,14 +218,14 @@ export default function AboutPage() {
                 {/* 2000s */}
                 <div className="timeline-item timeline-left relative">
                   <div className="grid md:grid-cols-2 gap-8">
-                    <div className="timeline-content text-center md:text-right bg-white/90 backdrop-blur-sm p-8 rounded-2xl shadow-lg">
-                      <div className="inline-block px-6 py-3 bg-primary text-white rounded-full font-bold mb-4 shadow-md">
+                    <div className="timeline-content text-center md:text-right bg-zinc-600 backdrop-blur-sm p-8 rounded-2xl shadow-lg">
+                      <div className="inline-block px-6 py-3 bg-zinc-800 text-white rounded-full font-bold mb-4 shadow-md">
                         2000s
                       </div>
-                      <h3 className="text-2xl font-heading font-bold mb-3 text-gray-900">
+                      <h3 className="text-2xl font-heading font-bold mb-3 text-white">
                         Building Our Home
                       </h3>
-                      <p className="text-gray-700 leading-relaxed">
+                      <p className="text-white/90 leading-relaxed">
                         We moved into our current location at 506 Runnels St.,
                         creating a warm and welcoming space for worship,
                         fellowship, and spiritual growth.
@@ -245,14 +245,14 @@ export default function AboutPage() {
                 <div className="timeline-item timeline-right relative">
                   <div className="grid md:grid-cols-2 gap-8">
                     <div className="hidden md:block"></div>
-                    <div className="timeline-content text-center md:text-left bg-white/90 backdrop-blur-sm p-8 rounded-2xl shadow-lg">
-                      <div className="inline-block px-6 py-3 bg-primary text-white rounded-full font-bold mb-4 shadow-md">
+                    <div className="timeline-content text-center md:text-left bg-stone-600 backdrop-blur-sm p-8 rounded-2xl shadow-lg">
+                      <div className="inline-block px-6 py-3 bg-stone-800 text-white rounded-full font-bold mb-4 shadow-md">
                         Today
                       </div>
-                      <h3 className="text-2xl font-heading font-bold mb-3 text-gray-900">
+                      <h3 className="text-2xl font-heading font-bold mb-3 text-white">
                         Continuing the Mission
                       </h3>
-                      <p className="text-gray-700 leading-relaxed">
+                      <p className="text-white/90 leading-relaxed">
                         Under Pastor Colton Grisham&apos;s leadership, we
                         continue to be a beacon of hope, offering multiple
                         services, online streaming, and community programs for
