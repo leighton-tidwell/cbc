@@ -67,3 +67,7 @@ This is a Next.js 15 application for Calvary Baptist Church using the App Router
 - Use TypeScript for all new components
 - Follow existing Tailwind patterns for consistency
 - Test on mobile devices - responsive design is critical
+
+### Quick Commands
+
+- `npm run format` to quickly format all files and ensure they match formatting
