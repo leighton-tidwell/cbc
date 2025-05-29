@@ -451,40 +451,100 @@ export default function AboutPage() {
         <StaffSection />
 
         {/* Join Our Family CTA */}
-        <section className="about-cta py-24 md:py-32 bg-gradient-to-br from-primary to-gray-dark relative overflow-hidden">
-          {/* Background Pattern */}
-          <div className="absolute inset-0 opacity-10">
-            <div className="absolute top-0 left-0 w-96 h-96 bg-white rounded-full blur-3xl transform -translate-x-1/2 -translate-y-1/2"></div>
-            <div className="absolute bottom-0 right-0 w-96 h-96 bg-white rounded-full blur-3xl transform translate-x-1/2 translate-y-1/2"></div>
+        <section className="about-cta py-24 md:py-32 relative overflow-hidden">
+          {/* Background Image */}
+          <div className="absolute inset-0">
+            <Image
+              src="/images/stock/nathan-mullet-pmiW630yDPE-unsplash.jpg"
+              alt="Church community background"
+              fill
+              className="object-cover brightness-50"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/50 to-primary/80"></div>
+          </div>
+          
+          {/* Enhanced Background Pattern */}
+          <div className="absolute inset-0">
+            {/* Animated gradient orbs */}
+            <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-white/10 rounded-full blur-3xl transform -translate-x-1/2 -translate-y-1/2 animate-pulse"></div>
+            <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-white/5 rounded-full blur-3xl transform translate-x-1/2 translate-y-1/2 animate-pulse" style={{ animationDelay: '1s' }}></div>
+            <div className="absolute top-1/2 left-1/2 w-[400px] h-[400px] bg-white/5 rounded-full blur-3xl transform -translate-x-1/2 -translate-y-1/2 animate-pulse" style={{ animationDelay: '2s' }}></div>
+            
+            {/* Subtle pattern overlay */}
+            <div className="absolute inset-0 opacity-5" style={{
+              backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+            }}></div>
           </div>
 
-          <div className="about-cta-content max-w-4xl mx-auto px-4 text-center relative z-10">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white mb-6">
-              Join Our Family
+          <div className="about-cta-content max-w-5xl mx-auto px-4 text-center relative z-10">
+            {/* Animated badge */}
+            <div className="inline-flex items-center gap-2 px-6 py-3 bg-white/20 backdrop-blur-md rounded-full text-white text-sm font-medium mb-8 border border-white/20">
+              <span className="relative flex h-3 w-3">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-3 w-3 bg-white"></span>
+              </span>
+              <span className="font-semibold">EVERYONE IS WELCOME</span>
+            </div>
+            
+            <h2 className="text-4xl md:text-5xl lg:text-7xl font-heading font-bold text-white mb-6">
+              Your Journey Starts
+              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-300 mt-2">
+                Here
+              </span>
             </h2>
-            <p className="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed">
-              Experience the warmth of our church family. Everyone is welcome, and there&apos;s a place for you here at Calvary.
+            <p className="text-xl md:text-2xl text-white/95 mb-12 leading-relaxed max-w-3xl mx-auto">
+              Take the first step into a community where faith comes alive, friendships flourish, and everyone finds their purpose.
             </p>
+            
+            {/* Enhanced stats */}
+            <div className="grid grid-cols-3 gap-8 max-w-2xl mx-auto mb-12">
+              <div className="text-center">
+                <div className="text-3xl md:text-4xl font-bold text-white mb-1">200+</div>
+                <div className="text-sm text-white/70">Active Members</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl md:text-4xl font-bold text-white mb-1">50+</div>
+                <div className="text-sm text-white/70">Weekly Activities</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl md:text-4xl font-bold text-white mb-1">All</div>
+                <div className="text-sm text-white/70">Ages Welcome</div>
+              </div>
+            </div>
+            
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/events"
-                className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-white text-primary font-semibold rounded-lg hover:bg-gray-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+                className="group inline-flex items-center justify-center gap-3 px-10 py-5 bg-white text-primary font-bold rounded-full hover:bg-gray-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl text-lg"
               >
                 View Upcoming Events
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                <svg className="w-5 h-5 group-hover:rotate-12 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                 </svg>
               </Link>
-              <a
-                href="#services"
-                className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-transparent border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-primary transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+              <Link
+                href="/#location-section"
+                className="group inline-flex items-center justify-center gap-3 px-10 py-5 bg-transparent border-2 border-white text-white font-bold rounded-full hover:bg-white hover:text-primary transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl backdrop-blur-sm text-lg"
               >
                 Plan Your Visit
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
-              </a>
+              </Link>
+            </div>
+            
+            {/* Additional warmth message */}
+            <div className="mt-12 text-white/80 text-base">
+              <p className="flex items-center justify-center gap-2">
+                <svg className="w-5 h-5 text-white/60" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clipRule="evenodd" />
+                </svg>
+                Come as you are. You belong here.
+                <svg className="w-5 h-5 text-white/60" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clipRule="evenodd" />
+                </svg>
+              </p>
             </div>
           </div>
         </section>

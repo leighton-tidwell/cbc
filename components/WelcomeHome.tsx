@@ -93,7 +93,7 @@ export default function WelcomeHome() {
         </div>
 
         {/* Slide 2: Church Information */}
-        <div className="welcome-slide" data-slide="2">
+        <div className="welcome-slide" data-slide="2" id="location-section">
           <div className="info-container min-h-screen px-4 py-16 md:px-16 md:py-32 flex items-center">
             <div className="info-grid grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-32 max-w-[1400px] mx-auto w-full">
               {/* Info Content */}
