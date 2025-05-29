@@ -43,7 +43,7 @@ This is a Next.js 15 application for Calvary Baptist Church using the App Router
 
 ### Asset Locations
 
-- **Logo**: `public/images/logo.png` and `public/images/logo_3.png`
+- **Logo**: `public/images/logo.png` and `public/images/logo_4.png`
 - **Church Interior**: `public/images/location.jpg`
 - **Stock Photos**: `public/images/stock/`
 
