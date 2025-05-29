@@ -2,7 +2,7 @@ export default function FooterWatermark() {
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none select-none">
       {/* Layer 1: Large text watermark with gradient opacity */}
-      <div className="absolute inset-0 opacity-[0.03]">
+      <div className="absolute inset-0 opacity-[0.1]">
         {/* Mobile: Multiple smaller CBCs */}
         <div className="md:hidden">
           <div className="absolute top-10 -left-10 text-[8rem] font-heading font-bold text-white/50 transform -rotate-45">
@@ -31,7 +31,7 @@ export default function FooterWatermark() {
       </div>
 
       {/* Layer 2: Flowing text pattern */}
-      <div className="absolute inset-0 opacity-[0.02]">
+      <div className="absolute inset-0 opacity-[0.1]">
         <div
           className="text-white font-medium text-xs md:text-sm tracking-[0.2em] md:tracking-[0.3em] leading-relaxed md:leading-loose"
           style={{
@@ -65,7 +65,7 @@ export default function FooterWatermark() {
 
       {/* Layer 3: Geometric pattern overlay */}
       <svg
-        className="absolute inset-0 w-full h-full opacity-[0.015]"
+        className="absolute inset-0 w-full h-full opacity-[0.05]"
         preserveAspectRatio="none"
       >
         <defs>
