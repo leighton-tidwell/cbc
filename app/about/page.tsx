@@ -508,12 +508,42 @@ export default function AboutPage() {
         </section>
 
         {/* What We Believe Section */}
-        <section className="py-24 md:py-32 bg-white relative">
-          <div className="max-w-7xl mx-auto px-4">
+        <section className="py-24 md:py-32 bg-gradient-to-br from-primary/[0.08] via-gray-50 to-white relative overflow-hidden">
+          {/* Enhanced Background Elements */}
+          <div className="absolute inset-0">
+            {/* Dynamic gradient mesh */}
+            <div className="absolute -top-24 -right-24 w-[600px] h-[600px] bg-gradient-to-br from-primary/20 to-blue-400/10 rounded-full blur-3xl animate-pulse"></div>
+            <div className="absolute -bottom-24 -left-24 w-[500px] h-[500px] bg-gradient-to-tr from-amber-300/15 to-primary/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-gradient-to-r from-primary/5 to-transparent rounded-full blur-3xl"></div>
+            
+            {/* Geometric pattern overlay */}
+            <div className="absolute inset-0 opacity-[0.03]"
+              style={{
+                backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%230A4D68' fill-opacity='1'%3E%3Cpath d='M30 30v-15h-2v15H13v2h15v15h2V32h15v-2H30z'/%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/svg%3E")`,
+                backgroundSize: '60px 60px'
+              }}
+            ></div>
+            
+            {/* Light rays effect */}
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full opacity-10">
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[2px] h-full bg-gradient-to-b from-primary to-transparent"></div>
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[2px] bg-gradient-to-r from-transparent via-primary to-transparent"></div>
+            </div>
+          </div>
+
+          {/* Top and bottom gradient fades */}
+          <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-white to-transparent"></div>
+          <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent"></div>
+
+          <div className="max-w-7xl mx-auto px-4 relative z-10">
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-text-color mb-6">
-                What We Believe
-              </h2>
+              {/* Decorative element behind title */}
+              <div className="relative inline-block">
+                <div className="absolute -inset-4 bg-gradient-to-r from-primary/5 via-primary/10 to-primary/5 blur-xl rounded-full opacity-50"></div>
+                <h2 className="relative text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-text-color mb-6">
+                  What We Believe
+                </h2>
+              </div>
               <p className="text-xl text-text-light max-w-3xl mx-auto">
                 Our faith is anchored in timeless biblical truths that guide
                 everything we do.
@@ -522,9 +552,11 @@ export default function AboutPage() {
 
             <div className="beliefs-grid grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
               {/* Belief Cards */}
-              <div className="belief-card group bg-bg-color rounded-2xl p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-transparent hover:border-gray-200">
+              <div className="belief-card group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 relative overflow-hidden">
+                {/* Card background decoration */}
+                <div className="absolute -top-8 -right-8 w-32 h-32 bg-gradient-to-br from-primary/10 to-blue-400/5 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-500"></div>
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors duration-300">
+                  <div className="w-12 h-12 bg-gradient-to-br from-primary/20 to-primary/10 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:from-primary/30 group-hover:to-primary/20 transition-all duration-300 shadow-md">
                     <svg
                       className="w-6 h-6 text-primary"
                       fill="none"
@@ -554,9 +586,11 @@ export default function AboutPage() {
                 </div>
               </div>
 
-              <div className="belief-card group bg-bg-color rounded-2xl p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-transparent hover:border-gray-200">
+              <div className="belief-card group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 relative overflow-hidden">
+                {/* Card background decoration */}
+                <div className="absolute -top-8 -right-8 w-32 h-32 bg-gradient-to-br from-primary/10 to-blue-400/5 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-500"></div>
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors duration-300">
+                  <div className="w-12 h-12 bg-gradient-to-br from-primary/20 to-primary/10 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:from-primary/30 group-hover:to-primary/20 transition-all duration-300 shadow-md">
                     <svg
                       className="w-6 h-6 text-primary"
                       fill="none"
@@ -584,9 +618,11 @@ export default function AboutPage() {
                 </div>
               </div>
 
-              <div className="belief-card group bg-bg-color rounded-2xl p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-transparent hover:border-gray-200">
+              <div className="belief-card group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 relative overflow-hidden">
+                {/* Card background decoration */}
+                <div className="absolute -top-8 -right-8 w-32 h-32 bg-gradient-to-br from-primary/10 to-blue-400/5 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-500"></div>
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors duration-300">
+                  <div className="w-12 h-12 bg-gradient-to-br from-primary/20 to-primary/10 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:from-primary/30 group-hover:to-primary/20 transition-all duration-300 shadow-md">
                     <svg
                       className="w-6 h-6 text-primary"
                       fill="none"
@@ -616,9 +652,11 @@ export default function AboutPage() {
                 </div>
               </div>
 
-              <div className="belief-card group bg-bg-color rounded-2xl p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-transparent hover:border-gray-200">
+              <div className="belief-card group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 relative overflow-hidden">
+                {/* Card background decoration */}
+                <div className="absolute -top-8 -right-8 w-32 h-32 bg-gradient-to-br from-primary/10 to-blue-400/5 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-500"></div>
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors duration-300">
+                  <div className="w-12 h-12 bg-gradient-to-br from-primary/20 to-primary/10 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:from-primary/30 group-hover:to-primary/20 transition-all duration-300 shadow-md">
                     <svg
                       className="w-6 h-6 text-primary"
                       fill="none"
@@ -648,9 +686,11 @@ export default function AboutPage() {
                 </div>
               </div>
 
-              <div className="belief-card group bg-bg-color rounded-2xl p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-transparent hover:border-gray-200">
+              <div className="belief-card group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 relative overflow-hidden">
+                {/* Card background decoration */}
+                <div className="absolute -top-8 -right-8 w-32 h-32 bg-gradient-to-br from-primary/10 to-blue-400/5 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-500"></div>
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors duration-300">
+                  <div className="w-12 h-12 bg-gradient-to-br from-primary/20 to-primary/10 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:from-primary/30 group-hover:to-primary/20 transition-all duration-300 shadow-md">
                     <svg
                       className="w-6 h-6 text-primary"
                       fill="none"
@@ -680,9 +720,11 @@ export default function AboutPage() {
                 </div>
               </div>
 
-              <div className="belief-card group bg-bg-color rounded-2xl p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-transparent hover:border-gray-200">
+              <div className="belief-card group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 relative overflow-hidden">
+                {/* Card background decoration */}
+                <div className="absolute -top-8 -right-8 w-32 h-32 bg-gradient-to-br from-primary/10 to-blue-400/5 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-500"></div>
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors duration-300">
+                  <div className="w-12 h-12 bg-gradient-to-br from-primary/20 to-primary/10 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:from-primary/30 group-hover:to-primary/20 transition-all duration-300 shadow-md">
                     <svg
                       className="w-6 h-6 text-primary"
                       fill="none"
