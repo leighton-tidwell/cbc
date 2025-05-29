@@ -163,8 +163,7 @@ export default function EventsPage() {
                 Experience
               </span>
               <span className="block text-[clamp(3.5rem,10vw,7rem)] font-black leading-[0.9] tracking-[-0.03em]">
-                Life{' '}
-                <span className="text-primary italic">Together</span>
+                Life <span className="text-primary italic">Together</span>
               </span>
             </h1>
 

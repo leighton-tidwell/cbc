@@ -14,10 +14,12 @@ export default function Header() {
   const [isInitialized, setIsInitialized] = useState(false);
   const pathname = usePathname();
 
-  // Show dark header on events and about pages even when not scrolled
+  // Show dark header on events, about, and contact pages even when not scrolled
   const isEventsPage = pathname === '/events';
   const isAboutPage = pathname === '/about';
-  const shouldShowDarkHeader = scrolled || isEventsPage || isAboutPage;
+  const isContactPage = pathname === '/contact';
+  const shouldShowDarkHeader =
+    scrolled || isEventsPage || isAboutPage || isContactPage;
 
   useEffect(() => {
     const getScreenSize = () => {
@@ -111,21 +113,27 @@ export default function Header() {
           >
             <span
               className={`block w-6 h-0.5 transition-all duration-[300ms] ease-[cubic-bezier(0.4,0,0.2,1)] ${
-                (scrolled || isEventsPage) && !mobileMenuOpen && screenSize !== 'mobile'
+                (scrolled || isEventsPage) &&
+                !mobileMenuOpen &&
+                screenSize !== 'mobile'
                   ? 'bg-primary'
                   : 'bg-white'
               } ${mobileMenuOpen ? 'rotate-45 translate-y-[6px]' : ''}`}
             ></span>
             <span
               className={`block w-6 h-0.5 transition-all duration-[300ms] ease-[cubic-bezier(0.4,0,0.2,1)] ${
-                (scrolled || isEventsPage) && !mobileMenuOpen && screenSize !== 'mobile'
+                (scrolled || isEventsPage) &&
+                !mobileMenuOpen &&
+                screenSize !== 'mobile'
                   ? 'bg-primary'
                   : 'bg-white'
               } ${mobileMenuOpen ? 'opacity-0' : ''}`}
             ></span>
             <span
               className={`block w-6 h-0.5 transition-all duration-[300ms] ease-[cubic-bezier(0.4,0,0.2,1)] ${
-                (scrolled || isEventsPage) && !mobileMenuOpen && screenSize !== 'mobile'
+                (scrolled || isEventsPage) &&
+                !mobileMenuOpen &&
+                screenSize !== 'mobile'
                   ? 'bg-primary'
                   : 'bg-white'
               } ${mobileMenuOpen ? '-rotate-45 -translate-y-[6px]' : ''}`}

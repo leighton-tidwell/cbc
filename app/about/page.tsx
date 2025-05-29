@@ -14,15 +14,21 @@ export default function AboutPage() {
           {/* Dynamic Background */}
           <div className="absolute inset-0">
             <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-white to-gray-50"></div>
-            
+
             {/* Animated Orbs */}
             <div className="absolute top-20 -left-20 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-pulse"></div>
-            <div className="absolute -bottom-32 -right-32 w-[600px] h-[600px] bg-primary/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
-            
+            <div
+              className="absolute -bottom-32 -right-32 w-[600px] h-[600px] bg-primary/5 rounded-full blur-3xl animate-pulse"
+              style={{ animationDelay: '1s' }}
+            ></div>
+
             {/* Subtle Pattern */}
-            <div className="absolute inset-0 opacity-[0.02]" style={{
-              backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%230A4D68' fill-opacity='0.4'%3E%3Cpath d='M50 30c11.046 0 20 8.954 20 20s-8.954 20-20 20-20-8.954-20-20 8.954-20 20-20zm0 5c-8.284 0-15 6.716-15 15s6.716 15 15 15 15-6.716 15-15-6.716-15-15-15z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
-            }}></div>
+            <div
+              className="absolute inset-0 opacity-[0.02]"
+              style={{
+                backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%230A4D68' fill-opacity='0.4'%3E%3Cpath d='M50 30c11.046 0 20 8.954 20 20s-8.954 20-20 20-20-8.954-20-20 8.954-20 20-20zm0 5c-8.284 0-15 6.716-15 15s6.716 15 15 15 15-6.716 15-15-6.716-15-15-15z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+              }}
+            ></div>
           </div>
 
           {/* Hero Content */}
@@ -64,16 +70,28 @@ export default function AboutPage() {
             {/* Stats Row */}
             <div className="about-hero-stats grid grid-cols-3 gap-4 max-w-lg mx-auto mb-12">
               <div className="stat-item text-center p-4 bg-white/60 backdrop-blur-sm rounded-xl border border-white/20">
-                <div className="text-3xl md:text-4xl font-bold text-primary mb-1">58+</div>
-                <div className="text-xs text-gray-600 uppercase tracking-wider">Years Serving</div>
+                <div className="text-3xl md:text-4xl font-bold text-primary mb-1">
+                  58+
+                </div>
+                <div className="text-xs text-gray-600 uppercase tracking-wider">
+                  Years Serving
+                </div>
               </div>
               <div className="stat-item text-center p-4 bg-white/60 backdrop-blur-sm rounded-xl border border-white/20">
-                <div className="text-3xl md:text-4xl font-bold text-primary mb-1">200+</div>
-                <div className="text-xs text-gray-600 uppercase tracking-wider">Church Family</div>
+                <div className="text-3xl md:text-4xl font-bold text-primary mb-1">
+                  200+
+                </div>
+                <div className="text-xs text-gray-600 uppercase tracking-wider">
+                  Church Family
+                </div>
               </div>
               <div className="stat-item text-center p-4 bg-white/60 backdrop-blur-sm rounded-xl border border-white/20">
-                <div className="text-3xl md:text-4xl font-bold text-primary mb-1">1000s</div>
-                <div className="text-xs text-gray-600 uppercase tracking-wider">Lives Touched</div>
+                <div className="text-3xl md:text-4xl font-bold text-primary mb-1">
+                  1000s
+                </div>
+                <div className="text-xs text-gray-600 uppercase tracking-wider">
+                  Lives Touched
+                </div>
               </div>
             </div>
 
