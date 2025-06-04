@@ -1,59 +1,31 @@
 'use client';
 
-import { useEffect, useState, useRef } from 'react';
+import { FacebookVideo } from '@/utils/facebook';
+import { useEffect, useState, useRef, use } from 'react';
+import VideoLoadingState from './VideoLoadingState';
 
-// interface FacebookVideo {
-//   id: string;
-//   description?: string;
-//   title?: string;
-//   permalink_url: string;
-//   created_time: string;
-// }
+interface LatestSermonVideoProps {
+  videoPromise: Promise<FacebookVideo | null>;
+}
 
-export default function LatestSermonVideo() {
+export default function LatestSermonVideo({
+  videoPromise,
+}: LatestSermonVideoProps) {
+  const video = use(videoPromise);
+  const videoUrl = video?.permalink_url;
+
   const [isLoaded, setIsLoaded] = useState(false);
   const [dimensions, setDimensions] = useState({ width: 800, height: 450 });
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // TODO: Uncomment when valid access token is available
-    // Fetch latest video from Facebook Graph API
-    /*
-    const fetchLatestVideo = async () => {
-      try {
-        // Using the page ID from the access token
-        const pageId = '739260818526228';
-        const accessToken = 'YOUR_ACCESS_TOKEN_HERE';
-        
-        // Fetch videos from the page
-        const response = await fetch(
-          `https://graph.facebook.com/v18.0/${pageId}/videos?access_token=${accessToken}&fields=id,description,title,permalink_url,created_time&limit=1`
-        );
-        
-        if (!response.ok) {
-          throw new Error('Failed to fetch videos');
-        }
-        
-        const data = await response.json();
-        
-        if (data.data && data.data.length > 0) {
-          setLatestVideo(data.data[0]);
-        }
-      } catch (err) {
-        console.error('Error fetching Facebook video:', err);
-        setError('Failed to load video');
-      }
-    };
-
-    fetchLatestVideo();
-    */
-
     // Load Facebook SDK
     if (window.FB) {
       window.FB.XFBML.parse();
     } else {
       window.fbAsyncInit = function () {
         window.FB.init({
+          appId: process.env.NEXT_PUBLIC_FB_APP_ID,
           xfbml: true,
           version: 'v18.0',
         });
@@ -96,41 +68,14 @@ export default function LatestSermonVideo() {
       ref={containerRef}
       className="relative w-full h-full flex items-center justify-center bg-gray-100 overflow-hidden"
     >
-      {!isLoaded && (
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="animate-pulse">
-            <div className="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center">
-              <svg
-                className="w-8 h-8 text-primary"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"
-                />
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                />
-              </svg>
-            </div>
-            <p className="mt-4 text-text-light">Loading video...</p>
-          </div>
-        </div>
-      )}
+      {!isLoaded && <VideoLoadingState />}
 
-      {/* Fallback to specific video for now */}
+      {/* Use dynamic video URL */}
       {isLoaded && (
         <div className="w-full h-full flex items-center justify-center">
           <div
             className="fb-video"
-            data-href="https://www.facebook.com/cbcmerkel/videos/1722709861670680"
+            data-href={videoUrl}
             data-width={dimensions.width.toString()}
             data-height={dimensions.height.toString()}
             data-show-text="false"

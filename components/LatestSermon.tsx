@@ -1,8 +1,17 @@
+'use server';
+
 import LatestSermonVideo from './LatestSermonVideo';
 import LatestSermonAnimation from './LatestSermonAnimation';
 import JoinUsSundayCTA from './JoinUsSundayCTA';
+import VideoLoadingState from './VideoLoadingState';
+import SermonDate from './SermonDate';
+import SermonTitle from './SermonTitle';
+import { getLatestFacebookVideo } from '@/utils/facebook';
+import { Suspense } from 'react';
 
-export default function LatestSermon() {
+export default async function LatestSermon() {
+  const latestVideo = getLatestFacebookVideo();
+
   return (
     <section className="py-24 md:py-32 bg-white relative overflow-hidden">
       {/* Background decoration */}
@@ -37,36 +46,48 @@ export default function LatestSermon() {
             <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
               {/* Video Player */}
               <div className="relative aspect-video bg-gray-100">
-                <LatestSermonVideo />
+                <Suspense fallback={<VideoLoadingState />}>
+                  <LatestSermonVideo videoPromise={latestVideo} />
+                </Suspense>
               </div>
 
               {/* Sermon Info */}
               <div className="sermon-info p-8 lg:p-12">
                 <div className="flex flex-wrap items-center gap-4 mb-6">
-                  <span className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-semibold">
-                    <svg
-                      className="w-4 h-4"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-                      />
-                    </svg>
-                    May 17, 2025
-                  </span>
+                  <Suspense
+                    fallback={
+                      <span className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full">
+                        <svg
+                          className="w-4 h-4 text-primary"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                          />
+                        </svg>
+                        <span className="h-4 w-24 bg-primary/20 rounded animate-pulse" />
+                      </span>
+                    }
+                  >
+                    <SermonDate videoPromise={latestVideo} />
+                  </Suspense>
                   <span className="text-text-light text-sm">
                     Pastor Colton Grisham
                   </span>
                 </div>
 
-                <h3 className="text-2xl lg:text-3xl font-heading font-bold text-text-color mb-8">
-                  Walking in Faith: Trust God&apos;s Plan
-                </h3>
+                <Suspense
+                  fallback={
+                    <div className="h-8 lg:h-9 w-3/4 bg-gray-200 rounded animate-pulse mb-8" />
+                  }
+                >
+                  <SermonTitle videoPromise={latestVideo} />
+                </Suspense>
 
                 <div className="flex flex-col sm:flex-row gap-4">
                   <a

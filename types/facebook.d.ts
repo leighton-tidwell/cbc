@@ -1,6 +1,10 @@
 interface Window {
   FB: {
-    init: (params: { xfbml?: boolean; version: string }) => void;
+    init: (params: {
+      appId?: string;
+      xfbml?: boolean;
+      version: string;
+    }) => void;
     XFBML: {
       parse: (element?: HTMLElement) => void;
     };
