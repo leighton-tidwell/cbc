@@ -57,6 +57,7 @@ export default function Header() {
     { href: '/', label: 'Home', page: 'home' },
     { href: '/about', label: 'About', page: 'about' },
     { href: '/events', label: 'Events', page: 'events' },
+    { href: '/sermons', label: 'Sermons', page: 'sermons' },
     { href: '/contact', label: 'Contact', page: 'contact' },
   ];
 
@@ -120,8 +121,8 @@ export default function Header() {
                 mobileMenuOpen
                   ? 'bg-primary'
                   : shouldShowDarkHeader
-                  ? 'bg-primary'
-                  : 'bg-white'
+                    ? 'bg-primary'
+                    : 'bg-white'
               } ${mobileMenuOpen ? 'rotate-45 translate-y-[6px]' : ''}`}
             ></span>
             <span
@@ -129,8 +130,8 @@ export default function Header() {
                 mobileMenuOpen
                   ? 'bg-primary'
                   : shouldShowDarkHeader
-                  ? 'bg-primary'
-                  : 'bg-white'
+                    ? 'bg-primary'
+                    : 'bg-white'
               } ${mobileMenuOpen ? 'opacity-0' : ''}`}
             ></span>
             <span
@@ -138,8 +139,8 @@ export default function Header() {
                 mobileMenuOpen
                   ? 'bg-primary'
                   : shouldShowDarkHeader
-                  ? 'bg-primary'
-                  : 'bg-white'
+                    ? 'bg-primary'
+                    : 'bg-white'
               } ${mobileMenuOpen ? '-rotate-45 -translate-y-[6px]' : ''}`}
             ></span>
           </button>
