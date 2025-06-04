@@ -26,7 +26,7 @@ export async function getFacebookVideos(
   try {
     const response = await fetch(
       `https://graph.facebook.com/v18.0/${pageId}/videos?access_token=${accessToken}&fields=id,description,title,permalink_url,created_time,source,picture&limit=${limit}`,
-      { next: { revalidate: 3600 } } // Cache for 1 hour
+      { cache: 'no-store' } // Disable caching for fresh data
     );
 
     if (!response.ok) {
@@ -69,7 +69,7 @@ export async function getLatestFacebookVideo(): Promise<FacebookVideo | null> {
   try {
     const response = await fetch(
       `https://graph.facebook.com/v18.0/${pageId}/videos?access_token=${accessToken}&fields=id,description,title,permalink_url,created_time,source,picture&limit=1`,
-      { next: { revalidate: 3600 } } // Cache for 1 hour
+      { cache: 'no-store' } // Disable caching for fresh data
     );
 
     if (!response.ok) {
