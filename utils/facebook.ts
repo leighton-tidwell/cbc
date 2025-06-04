@@ -123,5 +123,5 @@ export function extractSermonTitle(video: FacebookVideo): string {
     }
   }
 
-  return "Walking in Faith: Trust God's Plan";
+  return 'Sunday Service Live Stream';
 }
